@@ -10,7 +10,7 @@ import React from "react";
 
 const MissionCard = ({ title }) => {
   return (
-    <Card className="transistion-colors hover:bg-sky-400">
+    <Card className="transistion-colors hover:bg-sky-100">
       <CardHeader>
         <Castle size={40} className="mb-3" />
         <CardTitle>{title}</CardTitle>

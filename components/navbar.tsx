@@ -51,6 +51,12 @@ const Navbar = () => {
             Online Services
           </Link>
           <Link
+            href="/downloads"
+            className="text-white transition-colors hover:text-orange-100"
+          >
+            Downloads
+          </Link>
+          <Link
             href="#"
             className="text-white transition-colors hover:text-orange-100"
           >

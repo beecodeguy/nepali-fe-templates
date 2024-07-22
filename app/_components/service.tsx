@@ -11,15 +11,33 @@ import Link from "next/link";
 import React from "react";
 
 const services = [
-  "Merchant Banking",
-  "Registrar to Shares",
-  "Mutual Fund",
-  "Portfolio Management Service(PMS)",
-  "Depository Participants",
-  "Advisory Services",
+  {
+    slug: "merchant-banking",
+    title: "Merchant Banking",
+  },
+  {
+    slug: "registrar-shares",
+    title: "Registrar to Shares",
+  },
+  {
+    slug: "mutual-fund",
+    title: "Mutual Fund",
+  },
+  {
+    slug: "portfolio-management-service",
+    title: "Portfolio Management Service(PMS)",
+  },
+  {
+    slug: "depository-participants",
+    title: "Depository Participants (DP)",
+  },
+  {
+    slug: "advisory-service",
+    title: "Advisory Services",
+  },
 ];
 
-const ServiceCard = ({ title }) => {
+const ServiceCard = ({ title, slug }) => {
   return (
     <Card className="hover:bg-sky-200">
       <CardHeader>
@@ -36,7 +54,7 @@ const ServiceCard = ({ title }) => {
       </CardContent>
       <CardFooter>
         <Link
-          href={"#"}
+          href={`/services/${slug}`}
           className="underline text-sky-500 transition-colors hover:text-sky-700"
         >
           Read more
@@ -55,7 +73,11 @@ const ServiceSection = () => {
       </p>
       <div className="grid grid-cols-1 md:grid-cols-3 gap-3 mt-4">
         {services?.map((service) => (
-          <ServiceCard key={service} title={service} />
+          <ServiceCard
+            key={service.slug}
+            title={service.title}
+            slug={service.slug}
+          />
         ))}
       </div>
     </section>

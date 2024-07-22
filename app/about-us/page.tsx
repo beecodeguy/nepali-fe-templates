@@ -3,6 +3,7 @@ import React from "react";
 import Teams from "../_components/teams";
 import { Separator } from "@/components/ui/separator";
 import MissionCard from "../_components/mission-card";
+import Banner from "@/components/banner";
 
 const imageLink =
   "https://images.pexels.com/photos/7947709/pexels-photo-7947709.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1";
@@ -64,12 +65,7 @@ const managementTeams = [
 const AboutUsPage = () => {
   return (
     <section className="min-h-screen flex flex-col">
-      <div className="h-[300px] w-full relative">
-        <Image src={imageLink} alt="banner" fill />
-        <div className="absolute w-full h-full flex items-center justify-center">
-          <h1 className="absolute z-2 text-white text-4xl">Company Profile</h1>
-        </div>
-      </div>
+      <Banner title="Company Profile" imageSrc={imageLink} />
       <section className="p-5 large-screen">
         <h1 className="underline mb-4 text-center">About Us</h1>
         <div className="w-full grid grid-cols-1 md:grid-cols-2 gap-4 px-3">
@@ -105,13 +101,15 @@ const AboutUsPage = () => {
         </div>
       </section>
       <Separator />
-      <div className="grid p-4 my-4 grid-cols-1 md:grid-cols-3 gap-4 alternate-gradient-bg">
-        <MissionCard title="Mission" />
-        <MissionCard title={"Values"} />
-        <MissionCard title="Vision" />
-      </div>
+      <section className="bg-gray-50">
+        <div className="grid p-4 my-4 grid-cols-1 md:grid-cols-3 gap-4 large-screen">
+          <MissionCard title="Mission" />
+          <MissionCard title={"Values"} />
+          <MissionCard title="Vision" />
+        </div>
+      </section>
       <Separator />
-      <section className="large-screen my-4 px-4">
+      <section className="large-screen my-6 px-4">
         <h1 className="underline mb-3 text-center">Board of Directors</h1>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
           {boardOfDirectors?.map((director) => (
@@ -120,13 +118,14 @@ const AboutUsPage = () => {
         </div>
       </section>
       <Separator />
-
-      <section className="large-screen my-4 p-4 alternate-gradient-bg">
-        <h1 className="underline mb-3 text-center">Management Team</h1>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-          {managementTeams?.map((director) => (
-            <Teams key={director.id} {...director} />
-          ))}
+      <section className="bg-gray-50">
+        <div className="large-screen my-4 p-4">
+          <h1 className="underline mb-3 text-center">Management Team</h1>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+            {managementTeams?.map((director) => (
+              <Teams key={director.id} {...director} />
+            ))}
+          </div>
         </div>
       </section>
     </section>
