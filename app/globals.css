@@ -71,6 +71,10 @@
     @apply text-xl font-semibold;
   }
 
+  h1 {
+    @apply text-2xl font-semibold;
+  }
+
   p.footer-text {
     @apply text-white;
   }
