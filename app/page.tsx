@@ -11,10 +11,9 @@ export default function Home() {
       <div className="h-[600px] w-full relative">
         <Image src={imageLink} alt="banner" fill />
       </div>
-      <section className="p-4 mt-4 grow">
+      <section className="p-4 mt-4 grow large-screen">
         <ServiceSection />
         <Notices />
-        <h1>Start Page...</h1>
       </section>
     </main>
   );

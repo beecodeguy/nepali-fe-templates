@@ -12,6 +12,7 @@ import {
   DropdownMenuSeparator,
   DropdownMenuItem,
 } from "./ui/dropdown-menu";
+import Image from "next/image";
 
 const Navbar = () => {
   return (
@@ -22,26 +23,38 @@ const Navbar = () => {
             href="/"
             className="flex items-center gap-2 text-lg font-semibold md:text-base"
           >
-            <Package2 className="h-6 w-6" />
+            <Image alt="logo" src="/assets/hre.png" width={90} height={40} />
             <span className="sr-only">Capital Site</span>
           </Link>
           <Link
             href="/"
-            className="text-white transition-colors hover:text-zinc-200"
+            className="text-white transition-colors hover:text-orange-100"
           >
             <span>Home</span>
           </Link>
           <Link
             href="/about-us"
-            className="text-white transition-colors hover:text-zinc-200"
+            className="text-white transition-colors hover:text-orange-100"
           >
             <span>About us</span>
           </Link>
           <Link
-            href="#"
-            className="text-white transition-colors hover:text-zinc-200"
+            href="/services"
+            className="text-white transition-colors hover:text-orange-100"
           >
             Services
+          </Link>
+          <Link
+            href="#"
+            className="text-white transition-colors hover:text-orange-100"
+          >
+            Online Services
+          </Link>
+          <Link
+            href="#"
+            className="text-white transition-colors hover:text-orange-100"
+          >
+            Information Center
           </Link>
         </nav>
         <Sheet>
@@ -95,7 +108,7 @@ const Navbar = () => {
           </SheetContent>
         </Sheet>
         <div className="flex w-full items-center gap-4 md:ml-auto md:gap-2 lg:gap-4">
-          <form className="ml-auto flex-1 sm:flex-initial">
+          {/* <form className="ml-auto flex-1 sm:flex-initial">
             <div className="relative">
               <Search className="absolute left-2.5 top-2.5 h-4 w-4 text-muted-foreground" />
               <Input
@@ -104,8 +117,8 @@ const Navbar = () => {
                 className="pl-8 sm:w-[300px] md:w-[200px] lg:w-[300px]"
               />
             </div>
-          </form>
-          <DropdownMenu>
+          </form> */}
+          {/* <DropdownMenu>
             <DropdownMenuTrigger asChild>
               <Button variant="secondary" size="icon" className="rounded-full">
                 <CircleUser className="h-5 w-5" />
@@ -120,7 +133,7 @@ const Navbar = () => {
               <DropdownMenuSeparator />
               <DropdownMenuItem>Logout</DropdownMenuItem>
             </DropdownMenuContent>
-          </DropdownMenu>
+          </DropdownMenu> */}
         </div>
       </header>
     </div>

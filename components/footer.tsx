@@ -11,6 +11,50 @@ import {
 import Link from "next/link";
 import React from "react";
 
+const importantLinks = [
+  {
+    id: "1",
+    title: "Securities Board of Nepal",
+  },
+  { id: "2", title: "Nepal Stock Exchange" },
+  { id: "3", title: "CDS & Clearig Ltd." },
+  { id: "4", title: "Merchant Banking Association" },
+];
+
+const usefulLinks = [
+  {
+    id: "1",
+    title: "Nepal Rastra Bank",
+  },
+  { id: "2", title: "Random Link 1" },
+  { id: "3", title: "Random Link 2" },
+  { id: "4", title: "Random Link 3" },
+];
+
+const quickLinks = [
+  {
+    id: "1",
+    title: "Downloads",
+  },
+  { id: "2", title: "News" },
+  { id: "3", title: "Notice" },
+  { id: "4", title: "Career" },
+  { id: "5", title: "Contact" },
+];
+
+const NavLinkItem = ({ title }) => {
+  return (
+    <li className="mb-4">
+      <Link
+        href={"#"}
+        className="flex items-center gap-2 footer-text footer-link"
+      >
+        {title}
+      </Link>
+    </li>
+  );
+};
+
 const Footer = () => {
   return (
     <footer className="p-4 bg-blue-gradient border-t sm:p-6 dark:bg-gray-800">
@@ -30,46 +74,9 @@ const Footer = () => {
                 Quick Links
               </h6>
               <ul className="text-white dark:text-gray-400">
-                <li className="mb-4">
-                  <Link
-                    href={"#"}
-                    className="flex items-center gap-2 footer-text"
-                  >
-                    Downloads
-                  </Link>
-                </li>
-                <li className="mb-4">
-                  <Link
-                    href={"#"}
-                    className="flex items-center gap-2 footer-text"
-                  >
-                    News
-                  </Link>
-                </li>
-                <li className="mb-4">
-                  <Link
-                    href={"#"}
-                    className="flex items-center gap-2 footer-text"
-                  >
-                    Notice
-                  </Link>
-                </li>
-                <li className="mb-4">
-                  <Link
-                    href={"#"}
-                    className="flex items-center gap-2 footer-text"
-                  >
-                    Career
-                  </Link>
-                </li>
-                <li className="mb-4">
-                  <Link
-                    href={"#"}
-                    className="flex items-center gap-2 footer-text"
-                  >
-                    Contact
-                  </Link>
-                </li>
+                {quickLinks.map((linkItem) => (
+                  <NavLinkItem key={linkItem.id} title={linkItem.title} />
+                ))}
               </ul>
             </div>
             <div>
@@ -77,38 +84,9 @@ const Footer = () => {
                 Important Links
               </h6>
               <ul className="text-white dark:text-gray-400">
-                <li className="mb-4">
-                  <Link
-                    href={"#"}
-                    className="flex items-center gap-2 footer-text"
-                  >
-                    Securities Board of Nepal
-                  </Link>
-                </li>
-                <li className="mb-4">
-                  <Link
-                    href={"#"}
-                    className="flex items-center gap-2 footer-text"
-                  >
-                    Nepal Stock Exchange
-                  </Link>
-                </li>
-                <li className="mb-4">
-                  <Link
-                    href={"#"}
-                    className="flex items-center gap-2 footer-text"
-                  >
-                    CDS & Clearig Ltd.
-                  </Link>
-                </li>
-                <li className="mb-4">
-                  <Link
-                    href={"#"}
-                    className="flex items-center gap-2 footer-text"
-                  >
-                    Merchant Banking Association
-                  </Link>
-                </li>
+                {importantLinks.map((linkItem) => (
+                  <NavLinkItem key={linkItem.id} title={linkItem.title} />
+                ))}
               </ul>
             </div>
             <div>
@@ -116,38 +94,9 @@ const Footer = () => {
                 Useful Links
               </h6>
               <ul className="text-white dark:text-gray-400">
-                <li className="mb-4">
-                  <Link
-                    href={"#"}
-                    className="flex items-center gap-2 footer-text"
-                  >
-                    Nepal Rastra Bank
-                  </Link>
-                </li>
-                <li className="mb-4">
-                  <Link
-                    href={"#"}
-                    className="flex items-center gap-2 footer-text"
-                  >
-                    Random Link 1
-                  </Link>
-                </li>
-                <li className="mb-4">
-                  <Link
-                    href={"#"}
-                    className="flex items-center gap-2 footer-text"
-                  >
-                    Random Link 2
-                  </Link>
-                </li>
-                <li className="mb-4">
-                  <Link
-                    href={"#"}
-                    className="flex items-center gap-2 footer-text"
-                  >
-                    Random Link 3
-                  </Link>
-                </li>
+                {usefulLinks.map((linkItem) => (
+                  <NavLinkItem key={linkItem.id} title={linkItem.title} />
+                ))}
               </ul>
             </div>
             <div>
@@ -201,7 +150,7 @@ const Footer = () => {
         </div>
         <hr className="my-6 border-gray-200 sm:mx-auto dark:border-gray-700 lg:my-8" />
         <div className="sm:flex sm:items-center sm:justify-between">
-          <span className="text-sm text-gray-500 sm:text-center dark:text-gray-400">
+          <span className="text-sm text-gray-50 sm:text-center dark:text-gray-400">
             © 2024{" "}
             <Link href={"#"} className="hover:underline font-semibold">
               Capital™
