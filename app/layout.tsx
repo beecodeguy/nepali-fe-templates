@@ -21,9 +21,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={inter.className}>
         <Navbar />
-        <section className="w-full min-h-screen relative z-[-1]">
-          {children}
-        </section>
+        <section className="w-full min-h-screen relative">{children}</section>
         <Footer />
         <ToastProvider />
       </body>
