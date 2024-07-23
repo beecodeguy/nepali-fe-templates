@@ -2,7 +2,7 @@ import Link from "next/link";
 import React from "react";
 import { Sheet, SheetContent, SheetTrigger } from "./ui/sheet";
 import { Button } from "./ui/button";
-import { CircleUser, Menu, Package2, Search } from "lucide-react";
+import { ChevronDown, CircleUser, Menu, Package2, Search } from "lucide-react";
 import { Input } from "./ui/input";
 import {
   DropdownMenu,
@@ -14,8 +14,12 @@ import {
 } from "./ui/dropdown-menu";
 import Image from "next/image";
 import { cn } from "@/lib/utils";
+import { HoverCard, HoverCardTrigger, HoverCardContent } from "./ui/hover-card";
+import { Card } from "./ui/card";
+import NavSubLink from "./nav-sublink";
 
-const NavItem = ({ route, title, className = "" }) => {
+const NavItem = ({ route, title, className = "", subLinks = [] as any }) => {
+  const isSubLink = subLinks.length > 0;
   return (
     <Link
       href={route}
@@ -24,23 +28,39 @@ const NavItem = ({ route, title, className = "" }) => {
         className
       )}
     >
-      <span>{title}</span>
+      {!isSubLink ? (
+        <span>{title}</span>
+      ) : (
+        <NavSubLink subLinks={subLinks} title={title} />
+      )}
     </Link>
   );
 };
 
 const navLinks = [
-  { id: "1", route: "/", title: "Home" },
+  // { id: "1", route: "/", title: "Home" },
   { id: "2", route: "/about-us", title: "About Us" },
   { id: "3", route: "/services", title: "Services" },
   { id: "5", route: "/downloads", title: "Downloads" },
-  { id: "4", route: "#", title: "Online Services" },
+  {
+    id: "4",
+    route: "#",
+    title: "Online Services",
+    subLinks: [
+      { id: "1", route: "#", title: "PMS Login" },
+      {
+        id: "2",
+        route: "https://meroshare.cdsc.com.np/#/login",
+        title: "Meroshare Login",
+      },
+    ],
+  },
   { id: "6", route: "#", title: "Information Center" },
 ];
 
 const Navbar = () => {
   return (
-    <div className="flex w-full flex-col">
+    <div className="flex w-full flex-col z-30">
       <header className="sticky top-0 flex h-16 items-center gap-4 border-b bg-background px-4 md:px-6">
         <nav className="hidden flex-col gap-6 text-lg font-medium md:flex md:flex-row md:items-center md:shrink-0 md:gap-5 md:text-sm lg:gap-6">
           <Link
@@ -50,8 +70,8 @@ const Navbar = () => {
             <Image alt="logo" src="/assets/hre.png" width={90} height={40} />
             <span className="sr-only">Capital Site</span>
           </Link>
-          {navLinks?.map(({ id, route, title }) => (
-            <NavItem key={id} route={route} title={title} />
+          {navLinks?.map(({ id, route, title, subLinks }) => (
+            <NavItem key={id} route={route} title={title} subLinks={subLinks} />
           ))}
         </nav>
         <Sheet>

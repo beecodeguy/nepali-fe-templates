@@ -53,6 +53,11 @@ const config = {
           foreground: "hsl(var(--card-foreground))",
           hover: "hsl(var(--card-hover))",
         },
+        blue: {
+          skin: {
+            secondary: "rgba(var(--blue-secondary))",
+          },
+        },
       },
       borderRadius: {
         lg: "var(--radius)",

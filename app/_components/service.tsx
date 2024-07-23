@@ -50,7 +50,7 @@ const fallbackUrl =
 
 const ServiceCard = ({ title, slug, imageLink }) => {
   return (
-    <Card className="group max-w-[405px] h-fit hover:bg-foreground bg-white p-0 relative">
+    <Card className="group cursor-pointer max-w-[405px] h-fit hover:bg-foreground bg-white p-0 relative">
       <CardHeader className="p-0">
         <div
           className="image relative"
@@ -70,7 +70,9 @@ const ServiceCard = ({ title, slug, imageLink }) => {
         </div>
       </CardHeader>
       <CardContent className="p-4">
-        <CardTitle>{title}</CardTitle>
+        <CardTitle className="transition-all group-hover:underline">
+          {title}
+        </CardTitle>
         <CardDescription className="mt-4">
           Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ipsum
           aliquam nisi tenetur dignissimos alias quia laudantium, ducimus nemo

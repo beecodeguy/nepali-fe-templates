@@ -1,3 +1,4 @@
+import { isCompleteUrl } from "@/lib/utils";
 import {
   Facebook,
   Instagram,
@@ -15,20 +16,44 @@ const importantLinks = [
   {
     id: "1",
     title: "Securities Board of Nepal",
+    link: "https://www.sebon.gov.np/",
   },
-  { id: "2", title: "Nepal Stock Exchange" },
-  { id: "3", title: "CDS & Clearig Ltd." },
-  { id: "4", title: "Merchant Banking Association" },
+  { id: "2", title: "Nepal Stock Exchange", link: "https://nepalstock.com/" },
+  {
+    id: "3",
+    title: "CDS & Clearig Ltd.",
+
+    link: "https://cdsc.com.np/",
+  },
+  {
+    id: "4",
+    title: "Merchant Banking Association",
+    link: "https://mban.com.np/",
+  },
+  {
+    id: "5",
+    title: "Office of Company Registrar",
+    link: "https://ocr.gov.np/",
+  },
 ];
 
 const usefulLinks = [
   {
     id: "1",
     title: "Nepal Rastra Bank",
+    link: "https://www.nrb.org.np/",
   },
-  { id: "2", title: "Random Link 1" },
-  { id: "3", title: "Random Link 2" },
-  { id: "4", title: "Random Link 3" },
+  { id: "2", title: "Meroshare", link: "https://meroshare.cdsc.com.np" },
+  {
+    id: "3",
+    title: "United Nations Security Council list",
+    link: "https://main.un.org/securitycouncil/en/content/un-sc-consolidated-list",
+  },
+  {
+    id: "4",
+    title: "Targeted Sanction List (Home Affairs)",
+    link: "https://www.moha.gov.np/page/targeted-sanction-list",
+  },
 ];
 
 const quickLinks = [
@@ -42,11 +67,12 @@ const quickLinks = [
   { id: "5", title: "Contact" },
 ];
 
-const NavLinkItem = ({ title }) => {
+const NavLinkItem = ({ title, link = "" }) => {
   return (
     <li className="mb-4">
       <Link
-        href={"#"}
+        href={link || "#"}
+        target={isCompleteUrl(link) ? "_blank" : "_self"}
         className="flex items-center gap-2 footer-text footer-link"
       >
         <span className="text-sm">{title}</span>
@@ -57,7 +83,7 @@ const NavLinkItem = ({ title }) => {
 
 const Footer = () => {
   return (
-    <footer className="p-4 bg-background border-t sm:p-6">
+    <footer className="p-4 bg-blue-skin-secondary border-t sm:p-6">
       <div className="mx-auto max-w-screen-xl">
         <div className="md:flex md:justify-between">
           {/* <div className="mb-6 md:mb-0">
@@ -75,7 +101,11 @@ const Footer = () => {
               </h6>
               <ul className="text-white dark:text-gray-400">
                 {quickLinks.map((linkItem) => (
-                  <NavLinkItem key={linkItem.id} title={linkItem.title} />
+                  <NavLinkItem
+                    key={linkItem.id}
+                    title={linkItem.title}
+                    // link={linkItem.link}
+                  />
                 ))}
               </ul>
             </div>
@@ -85,7 +115,11 @@ const Footer = () => {
               </h6>
               <ul className="text-white dark:text-gray-400">
                 {importantLinks.map((linkItem) => (
-                  <NavLinkItem key={linkItem.id} title={linkItem.title} />
+                  <NavLinkItem
+                    key={linkItem.id}
+                    title={linkItem.title}
+                    link={linkItem.link}
+                  />
                 ))}
               </ul>
             </div>
@@ -95,7 +129,11 @@ const Footer = () => {
               </h6>
               <ul className="text-white dark:text-gray-400">
                 {usefulLinks.map((linkItem) => (
-                  <NavLinkItem key={linkItem.id} title={linkItem.title} />
+                  <NavLinkItem
+                    key={linkItem.id}
+                    title={linkItem.title}
+                    link={linkItem.link}
+                  />
                 ))}
               </ul>
             </div>
@@ -125,7 +163,7 @@ const Footer = () => {
               </ul>
             </div>
             <div>
-              <h6 className="mb-6 text-sm font-semibold text-white uppercase dark:text-white">
+              <h6 className="mb-6 text-white uppercase dark:text-white">
                 Information Officer
               </h6>
               <ul className="text-white dark:text-gray-400">

@@ -1,3 +1,4 @@
+import LinkButton from "@/components/link-button";
 import { Alert } from "@/components/ui/alert";
 import { Badge } from "@/components/ui/badge";
 import Link from "next/link";
@@ -5,14 +6,13 @@ import React from "react";
 
 const NoticeBanner = () => {
   return (
-    <Alert className="max-w-[300px] group hover:bg-card-hover border-l-[6px] border-l-red-500">
+    <Alert className="max-w-[300px] group cursor-pointer bg-white hover:bg-foreground border-l-[6px] border-l-red-500">
       <Badge variant="secondary">July 22, 2024</Badge>
-      <h6 className="text-primary group-hover:text-white">Capital Notice</h6>
-      <Link
-        href={"#"}
-        className="underline text-sm text-sky-500 transition-colors hover:text-sky-700"
-      >
-        Read More
+      <h6 className="text-primary group-hover:text-background group-hover:underline transition-all">
+        Capital Notice
+      </h6>
+      <Link href={"#"}>
+        <LinkButton />
       </Link>
     </Alert>
   );
