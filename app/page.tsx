@@ -14,26 +14,26 @@ const imageLink =
 export default function Home() {
   return (
     <main className="min-h-screen flex flex-col">
-      <WavyBackground>
-        <div className="grid grid-cols-1 md:grid-cols-2">
-          <div className="flex flex-col items-center justify-center gap-5 px-3">
-            <h1 className="text-4xl text-blue-600 font-bold">
-              Invest Today with Capital
-            </h1>
-            <p className="italic text-slate-700 px-6 text-center">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero,
-              dolores nemo. Accusamus magnam modi tenetur sapiente veritatis
-              minima optio dolorem quis, quaerat, amet ipsum similique
-              voluptatum at deleniti ex laudantium?
-            </p>
-            <Button>Know More</Button>
-          </div>
-          <DisplayLottie
-            animationData={StockMarketLottie}
-            style={{ height: "500px" }}
-          />
+      {/* <WavyBackground> */}
+      <div className="grid grid-cols-1 md:grid-cols-2">
+        <div className="flex flex-col items-center justify-center gap-5 px-3">
+          <h1 className="text-4xl text-blue-600 font-bold">
+            Invest Today with Capital
+          </h1>
+          <p className="italic text-slate-700 px-6 text-center">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero,
+            dolores nemo. Accusamus magnam modi tenetur sapiente veritatis
+            minima optio dolorem quis, quaerat, amet ipsum similique voluptatum
+            at deleniti ex laudantium?
+          </p>
+          <Button>Know More</Button>
         </div>
-      </WavyBackground>
+        <DisplayLottie
+          animationData={StockMarketLottie}
+          style={{ height: "500px" }}
+        />
+      </div>
+      {/* </WavyBackground> */}
       {/* <div className="h-[600px] w-full relative">
         <Image src={imageLink} alt="banner" fill />
       </div> */}
