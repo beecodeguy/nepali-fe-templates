@@ -5,6 +5,14 @@ import { Separator } from "@/components/ui/separator";
 import DisplayLottie from "@/providers/lottie-file";
 import { Button } from "@/components/ui/button";
 import { WavyBackground } from "@/components/aceternity/wavy-background";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel";
+import Autoplay from "embla-carousel-autoplay";
 
 const StockMarketLottie = require("../constants/lottie/stock-market.json");
 
@@ -15,8 +23,8 @@ export default function Home() {
   return (
     <main className="min-h-screen flex flex-col">
       {/* <WavyBackground> */}
-      <div className="grid grid-cols-1 md:grid-cols-2">
-        <div className="flex flex-col items-center justify-center gap-5 px-3">
+      <div className="grid grid-cols-1 place-items-center md:grid-cols-2">
+        <div className="flex flex-col items-center justify-center gap-5 px-3 max-w-[500px]">
           <h1 className="text-4xl text-primary font-bold">
             Invest Today with Capital
           </h1>
@@ -28,10 +36,41 @@ export default function Home() {
           </p>
           <Button>Know More</Button>
         </div>
-        <DisplayLottie
-          animationData={StockMarketLottie}
-          style={{ height: "500px" }}
-        />
+        <Carousel
+          className="max-w-[600px]"
+          opts={{
+            loop: true,
+          }}
+        >
+          <CarouselContent>
+            <CarouselItem>
+              <div
+                className="relative"
+                style={{
+                  minWidth: "600px",
+                  maxWidth: "600px",
+                  minHeight: "500px",
+                  maxHeight: "500px",
+                }}
+              >
+                <Image
+                  src={"/assets/mountain.jpg" || imageLink}
+                  fill
+                  alt="himalayan"
+                  style={{ objectFit: "cover" }}
+                />
+              </div>
+            </CarouselItem>
+            <CarouselItem>
+              <DisplayLottie
+                animationData={StockMarketLottie}
+                style={{ height: "500px" }}
+              />
+            </CarouselItem>
+          </CarouselContent>
+          <CarouselPrevious />
+          <CarouselNext />
+        </Carousel>
       </div>
       {/* </WavyBackground> */}
       {/* <div className="h-[600px] w-full relative">
