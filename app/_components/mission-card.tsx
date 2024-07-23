@@ -11,9 +11,13 @@ import React from "react";
 const MissionCard = ({ title }) => {
   return (
     <Card className="transistion-colors hover:bg-sky-100">
-      <CardHeader>
-        <Castle size={40} className="mb-3" />
-        <CardTitle>{title}</CardTitle>
+      <CardHeader className="flex flex-row items-center justify-start gap-5">
+        <div className="p-3 bg-blue-700 w-fit rounded flex items-center justify-center mb-3 text-slate-200">
+          <Castle size={40} />
+        </div>
+        <CardTitle className="text-3xl text-orange-600 underline">
+          {title}
+        </CardTitle>
       </CardHeader>
       <CardContent>
         <CardDescription>

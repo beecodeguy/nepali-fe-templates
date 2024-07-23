@@ -5,7 +5,7 @@ import React from "react";
 
 const NoticeBanner = () => {
   return (
-    <Alert className="max-w-[300px] hover:bg-sky-100 border-l-4 border-l-red-500">
+    <Alert className="max-w-[300px] hover:bg-sky-100 border-l-[6px] border-l-red-500">
       <Badge variant="secondary">July 22, 2024</Badge>
       <h6>Capital Notice</h6>
       <Link
@@ -23,7 +23,9 @@ const Notices = () => {
     <section className="my-5 w-full flex flex-col items-center gap-4 justify-center">
       <h1 className="underline">Notices & Updates</h1>
       <p>Latest News and updates at a glance</p>
-      <div className="grid w-full grid-cols-2 md:grid-cols-4">
+      <div className="grid w-full grid-cols-2 md:grid-cols-4 mx-auto">
+        <NoticeBanner />
+        <NoticeBanner />
         <NoticeBanner />
       </div>
     </section>

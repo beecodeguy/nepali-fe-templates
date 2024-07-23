@@ -13,6 +13,30 @@ import {
   DropdownMenuItem,
 } from "./ui/dropdown-menu";
 import Image from "next/image";
+import { cn } from "@/lib/utils";
+
+const NavItem = ({ route, title, className = "" }) => {
+  return (
+    <Link
+      href={route}
+      className={cn(
+        "text-white transition-colors hover:text-orange-100 hover:underline",
+        className
+      )}
+    >
+      <span>{title}</span>
+    </Link>
+  );
+};
+
+const navLinks = [
+  { id: "1", route: "/", title: "Home" },
+  { id: "2", route: "/about-us", title: "About Us" },
+  { id: "3", route: "/services", title: "Services" },
+  { id: "5", route: "/downloads", title: "Downloads" },
+  { id: "4", route: "#", title: "Online Services" },
+  { id: "6", route: "#", title: "Information Center" },
+];
 
 const Navbar = () => {
   return (
@@ -26,42 +50,9 @@ const Navbar = () => {
             <Image alt="logo" src="/assets/hre.png" width={90} height={40} />
             <span className="sr-only">Capital Site</span>
           </Link>
-          <Link
-            href="/"
-            className="text-white transition-colors hover:text-orange-100"
-          >
-            <span>Home</span>
-          </Link>
-          <Link
-            href="/about-us"
-            className="text-white transition-colors hover:text-orange-100"
-          >
-            <span>About us</span>
-          </Link>
-          <Link
-            href="/services"
-            className="text-white transition-colors hover:text-orange-100"
-          >
-            Services
-          </Link>
-          <Link
-            href="#"
-            className="text-white transition-colors hover:text-orange-100"
-          >
-            Online Services
-          </Link>
-          <Link
-            href="/downloads"
-            className="text-white transition-colors hover:text-orange-100"
-          >
-            Downloads
-          </Link>
-          <Link
-            href="#"
-            className="text-white transition-colors hover:text-orange-100"
-          >
-            Information Center
-          </Link>
+          {navLinks?.map(({ id, route, title }) => (
+            <NavItem key={id} route={route} title={title} />
+          ))}
         </nav>
         <Sheet>
           <SheetTrigger asChild>
@@ -74,42 +65,27 @@ const Navbar = () => {
               <span className="sr-only">Toggle navigation menu</span>
             </Button>
           </SheetTrigger>
-          <SheetContent side="left">
+          <SheetContent side="left" className="bg-gray-100">
             <nav className="grid gap-6 text-lg font-medium">
               <Link
-                href="#"
-                className="flex items-center gap-2 text-lg font-semibold"
+                href="/"
+                className="flex items-center gap-2 text-lg font-semibold md:text-base"
               >
-                <Package2 className="h-6 w-6" />
-                <span className="sr-only">Acme Inc</span>
+                <Image
+                  alt="logo"
+                  src="/assets/hre.png"
+                  width={90}
+                  height={40}
+                />
+                <span className="sr-only">Capital Site</span>
               </Link>
-              <Link href="#" className="hover:text-foreground">
-                Dashboard
-              </Link>
-              <Link
-                href="#"
-                className="text-muted-foreground hover:text-foreground"
-              >
-                Orders
-              </Link>
-              <Link
-                href="#"
-                className="text-muted-foreground hover:text-foreground"
-              >
-                Products
-              </Link>
-              <Link
-                href="#"
-                className="text-muted-foreground hover:text-foreground"
-              >
-                Customers
-              </Link>
-              <Link
-                href="#"
-                className="text-muted-foreground hover:text-foreground"
-              >
-                Analytics
-              </Link>
+              {navLinks.map((linkItem) => (
+                <NavItem
+                  key={linkItem.id}
+                  className="text-slate-600 hover:text-slate-800"
+                  {...linkItem}
+                />
+              ))}
             </nav>
           </SheetContent>
         </Sheet>

@@ -67,7 +67,7 @@ const AboutUsPage = () => {
     <section className="min-h-screen flex flex-col">
       <Banner title="Company Profile" imageSrc={imageLink} />
       <section className="p-5 large-screen">
-        <h1 className="underline mb-4 text-center">About Us</h1>
+        <h1 className="underline mb-6 text-center text-4xl">About Us</h1>
         <div className="w-full grid grid-cols-1 md:grid-cols-2 gap-4 px-3">
           <div className="content">
             <p>
@@ -110,7 +110,9 @@ const AboutUsPage = () => {
       </section>
       <Separator />
       <section className="large-screen my-6 px-4">
-        <h1 className="underline mb-3 text-center">Board of Directors</h1>
+        <h1 className="underline mb-3 text-center text-blue-700 text-4xl font-bold">
+          Board of Directors
+        </h1>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
           {boardOfDirectors?.map((director) => (
             <Teams key={director.id} {...director} />
@@ -120,7 +122,9 @@ const AboutUsPage = () => {
       <Separator />
       <section className="bg-gray-50">
         <div className="large-screen my-4 p-4">
-          <h1 className="underline mb-3 text-center">Management Team</h1>
+          <h1 className="underline mb-3 text-center text-blue-700 text-4xl font-bold">
+            Management Team
+          </h1>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
             {managementTeams?.map((director) => (
               <Teams key={director.id} {...director} />
