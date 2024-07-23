@@ -5,9 +5,9 @@ import React from "react";
 
 const NoticeBanner = () => {
   return (
-    <Alert className="max-w-[300px] hover:bg-sky-100 border-l-[6px] border-l-red-500">
+    <Alert className="max-w-[300px] group hover:bg-card-hover border-l-[6px] border-l-red-500">
       <Badge variant="secondary">July 22, 2024</Badge>
-      <h6>Capital Notice</h6>
+      <h6 className="text-primary group-hover:text-white">Capital Notice</h6>
       <Link
         href={"#"}
         className="underline text-sm text-sky-500 transition-colors hover:text-sky-700"

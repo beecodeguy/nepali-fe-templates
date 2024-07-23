@@ -21,7 +21,7 @@ const DownloadLink = ({ handleDownloadClick, title, id }: IProps) => {
       <div className="p-4 flex items-center justify-start w-full">
         <h6 className="grow capitalize">{title}</h6>
         <div
-          className="rounded-full p-2 bg-orange-300 hover:bg-orange-400 cursor-pointer"
+          className="rounded-full p-2 bg-primary hover:bg-background cursor-pointer text-white"
           onClick={() => {
             handleDownloadClick?.();
             toast.success("Download Clicked");

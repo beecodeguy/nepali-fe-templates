@@ -7,7 +7,7 @@ const userImage =
 
 const Teams = ({ title, name }) => {
   return (
-    <div className="px-3 flex items-center cursor-pointer rounded-lg shadow min-h-[300px] sm:flex dark:bg-gray-800 dark:border-gray-700 hover:bg-sky-50">
+    <div className="px-3 flex items-center cursor-pointer rounded-lg border shadow min-h-[300px] sm:flex dark:bg-gray-800 dark:border-gray-700 hover:bg-sky-50">
       <Image
         className="rounded-full aspect-square"
         src={userImage}
@@ -16,8 +16,8 @@ const Teams = ({ title, name }) => {
         height={120}
       />
       <div className="p-5">
-        <h3 className="text-xl font-bold tracking-tight text-gray-900 dark:text-white">
-          <a href="#">{name}</a>
+        <h3 className="text-xl font-bold tracking-tight text-primary">
+          <Link href="#">{name}</Link>
         </h3>
         <span className="text-gray-500 dark:text-gray-400">{title}</span>
         <p className="mt-3 mb-4 font-light text-gray-500 dark:text-gray-400">

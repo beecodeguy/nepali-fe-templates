@@ -67,7 +67,9 @@ const AboutUsPage = () => {
     <section className="min-h-screen flex flex-col">
       <Banner title="Company Profile" imageSrc={imageLink} />
       <section className="p-5 large-screen">
-        <h1 className="underline mb-6 text-center text-4xl">About Us</h1>
+        <h1 className="underline mb-6 text-center text-4xl text-primary">
+          About Us
+        </h1>
         <div className="w-full grid grid-cols-1 md:grid-cols-2 gap-4 px-3">
           <div className="content">
             <p>

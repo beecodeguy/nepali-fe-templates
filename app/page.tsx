@@ -17,7 +17,7 @@ export default function Home() {
       {/* <WavyBackground> */}
       <div className="grid grid-cols-1 md:grid-cols-2">
         <div className="flex flex-col items-center justify-center gap-5 px-3">
-          <h1 className="text-4xl text-blue-600 font-bold">
+          <h1 className="text-4xl text-primary font-bold">
             Invest Today with Capital
           </h1>
           <p className="italic text-slate-700 px-6 text-center">

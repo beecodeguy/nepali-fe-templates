@@ -49,7 +49,7 @@ const NavLinkItem = ({ title }) => {
         href={"#"}
         className="flex items-center gap-2 footer-text footer-link"
       >
-        {title}
+        <span className="text-sm">{title}</span>
       </Link>
     </li>
   );
@@ -57,7 +57,7 @@ const NavLinkItem = ({ title }) => {
 
 const Footer = () => {
   return (
-    <footer className="p-4 bg-blue-gradient border-t sm:p-6 dark:bg-gray-800">
+    <footer className="p-4 bg-background border-t sm:p-6">
       <div className="mx-auto max-w-screen-xl">
         <div className="md:flex md:justify-between">
           {/* <div className="mb-6 md:mb-0">
@@ -158,13 +158,13 @@ const Footer = () => {
             . All Rights Reserved.
           </span>
           <div className="flex mt-4 space-x-6 sm:justify-center sm:mt-0">
-            <Link href={"#"} className="text-slate-600 hover:text-slate-500">
+            <Link href={"#"} className="text-white hover:text-slate-500">
               <Facebook />
             </Link>
-            <Link href={"#"} className="text-slate-600 hover:text-slate-500">
+            <Link href={"#"} className="text-white hover:text-slate-500">
               <Instagram />
             </Link>
-            <Link href={"#"} className="text-slate-600 hover:text-slate-500">
+            <Link href={"#"} className="text-white hover:text-slate-500">
               <Youtube />
             </Link>
           </div>

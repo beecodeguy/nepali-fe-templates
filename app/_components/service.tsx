@@ -39,13 +39,13 @@ const services = [
 
 const ServiceCard = ({ title, slug }) => {
   return (
-    <Card className="hover:bg-sky-200">
+    <Card className="group hover:bg-card-hover">
       <CardHeader>
         <AreaChart size={24} />
         <CardTitle>{title}</CardTitle>
       </CardHeader>
       <CardContent>
-        <CardDescription>
+        <CardDescription className="group-hover:text-white">
           Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ipsum
           aliquam nisi tenetur dignissimos alias quia laudantium, ducimus nemo
           voluptate, quo nam, labore sequi quaerat voluptatum dolore et. Libero,
@@ -67,7 +67,7 @@ const ServiceCard = ({ title, slug }) => {
 const ServiceSection = () => {
   return (
     <section className="flex flex-col gap-2 justify-center items-center">
-      <h1 className="underline">Our Services</h1>
+      <h1 className="underline text-primary text-4xl">Our Services</h1>
       <p className="capitalize">
         Presenting Banking Plan & Service That are Right For You
       </p>
