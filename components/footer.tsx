@@ -1,3 +1,4 @@
+import { footerPins } from "@/lib/consts";
 import { isCompleteUrl } from "@/lib/utils";
 import {
   Facebook,
@@ -60,11 +61,16 @@ const quickLinks = [
   {
     id: "1",
     title: "Downloads",
+    link: "/downloads",
   },
-  { id: "2", title: "News" },
-  { id: "3", title: "Notice" },
-  { id: "4", title: "Career" },
-  { id: "5", title: "Contact" },
+  {
+    id: "2",
+    title: "News",
+    link: "#",
+  },
+  { id: "3", title: "Notice", link: "#" },
+  // { id: "4", title: "Career" },
+  { id: "5", title: "Contact", link: "#" },
 ];
 
 const NavLinkItem = ({ title, link = "" }) => {
@@ -73,7 +79,7 @@ const NavLinkItem = ({ title, link = "" }) => {
       <Link
         href={link || "#"}
         target={isCompleteUrl(link) ? "_blank" : "_self"}
-        className="flex items-center gap-2 footer-text footer-link"
+        className="flex items-center gap-2 footer-text footer-link max-w-fit"
       >
         <span className="text-sm">{title}</span>
       </Link>
@@ -104,7 +110,7 @@ const Footer = () => {
                   <NavLinkItem
                     key={linkItem.id}
                     title={linkItem.title}
-                    // link={linkItem.link}
+                    link={linkItem.link}
                   />
                 ))}
               </ul>
@@ -144,19 +150,19 @@ const Footer = () => {
               <ul className="text-white dark:text-gray-400">
                 <li className="mb-4">
                   <p className="flex items-center gap-2 footer-text">
-                    <MapPin size={16} />
-                    <span>New Baneshowr, Kathmandu, Nepal</span>
+                    <MapPin size={16} className="shrink-0" />
+                    <span>{footerPins.location}</span>
                   </p>
                 </li>
                 <li className="mb-4">
                   <p className="flex items-center gap-2 footer-text">
-                    <Phone size={16} />
-                    <span>01-xxxxxxxx, 01-xxxxxxx</span>
+                    <Phone size={16} className="shrink-0" />
+                    <span>{footerPins.phone}</span>
                   </p>
                 </li>
                 <li className="mb-4">
                   <p className="flex items-center gap-2 footer-text">
-                    <Mail size={16} />
+                    <Mail size={16} className="shrink-0" />
                     <span>info@capital.com.np</span>
                   </p>
                 </li>
@@ -191,7 +197,7 @@ const Footer = () => {
           <span className="text-sm text-gray-50 sm:text-center dark:text-gray-400">
             © 2024{" "}
             <Link href={"#"} className="hover:underline font-semibold">
-              Capital™
+              Himalayan Securities Banker Ltd™
             </Link>
             . All Rights Reserved.
           </span>

@@ -9,7 +9,7 @@ const imageLink =
   "https://images.pexels.com/photos/7947709/pexels-photo-7947709.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1";
 
 const companyProfile =
-  "https://images.pexels.com/photos/796602/pexels-photo-796602.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1";
+  "https://images.unsplash.com/photo-1434030216411-0b793f4b4173?q=80&w=2070&auto=format&fit=crop";
 
 const boardOfDirectors = [
   {
@@ -70,44 +70,48 @@ const AboutUsPage = () => {
         <h1 className="underline mb-6 text-center text-4xl text-primary">
           About Us
         </h1>
-        <div className="w-full grid grid-cols-1 md:grid-cols-2 gap-4 px-3">
-          <div className="content">
+        <div className="w-full grid grid-cols-1 md:grid-cols-3 gap-7 px-3 h-[300px]">
+          <div className="content flex flex-col gap-6">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos sed
-              iste hic nulla sapiente, voluptatibus numquam accusamus esse quasi
-              laboriosam molestias doloribus architecto quidem provident
-              cupiditate inventore reprehenderit, natus totam!. Lorem ipsum
-              dolor sit amet consectetur adipisicing elit. Quos sed iste hic
-              nulla sapiente, voluptatibus numquam accusamus esse quasi
-              laboriosam molestias doloribus architecto quidem provident
-              cupiditate inventore reprehenderit, natus totam!
+              Himalaya Securities Banker Limited incorporated in 30th October
+              2023, is a Subsidiary of Himalayan Reinsurance Limited that
+              provides Merchant Banking services as licensed by its apex
+              resistor SEBON.
             </p>
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos sed
-              iste hic nulla sapiente, voluptatibus numquam accusamus esse quasi
-              laboriosam molestias doloribus architecto quidem provident
-              cupiditate inventore reprehenderit, natus totam!. Lorem ipsum
-              dolor sit amet consectetur adipisicing elit. Quos sed iste hic
-              nulla sapiente, voluptatibus numquam accusamus esse quasi
-              laboriosam molestias doloribus architecto quidem provident
-              cupiditate inventore reprehenderit, natus totam!
+              HSBL is one of the emerging Merchant bankers that aims to provide
+              innovative financial services to create investment for a secured
+              future and to bridge the gap between savings and investments to
+              create sustainable wealth.
             </p>
           </div>
-          <Image
-            className="ml-auto"
-            src={companyProfile}
-            alt="about"
-            width={500}
-            height={500}
-          />
+          <div className="col-span-2 relative">
+            <Image
+              className="ml-auto"
+              src={companyProfile}
+              alt="about"
+              fill
+              style={{ objectFit: "cover" }}
+            />
+          </div>
         </div>
       </section>
       <Separator />
       <section className="bg-gray-50">
         <div className="grid p-4 my-4 grid-cols-1 md:grid-cols-3 gap-4 large-screen">
-          <MissionCard title="Mission" />
-          <MissionCard title={"Values"} />
-          <MissionCard title="Vision" />
+          <MissionCard
+            title="Vision"
+            description="Our vision is to become one of the leading Merchant Bankers in Nepal."
+          />
+          <MissionCard
+            title={"Mission"}
+            description="Our mission is to provide innovative and integrated financial services with excellent
+growth opportunities."
+          />
+          <MissionCard
+            title="Values"
+            description="We uphold integrity, prioritize clients, pursue excellence, embrace innovation, ensure sustainable growth, and foster teamwork."
+          />
         </div>
       </section>
       <Separator />

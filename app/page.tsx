@@ -77,7 +77,7 @@ export default function Home() {
                 <CarouselAction
                   heading={"Portfolio Management Service"}
                   description={
-                    " Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero, dolores nemo. Accusamus magnam modi tenetur sapiente veritatis minima optio"
+                    "In HSBL, we have a dedicated team who professionally handles our PMS clients. PMS involves management of client’s assets through investment in various financial instrument such as equity, fixed deposits, bonds, debentures etc. to generate steady return on investments in line with your financial goals."
                   }
                   link="/services/portfolio-management"
                 />
@@ -102,7 +102,7 @@ export default function Home() {
                 <CarouselAction
                   heading={"Depository Service"}
                   description={
-                    " Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero, dolores nemo. Accusamus magnam modi tenetur sapiente veritatis minima optio"
+                    "As a Depository participant (DP) Himalaya Securities Banker Ltd acts as an intermediary between the depository system (CDS &amp; Clearing Ltd) and our valued customers. Hence, beneficiary owner can open Demat Account at HSBL and we aim to provide prompt service to all our customers."
                   }
                   link="/services/dp"
                 />
