@@ -72,7 +72,7 @@ const ServiceIdRoute = ({ params }: { params: { serviceId: string } }) => {
             <div className="w-full flex flex-col items-center gap-4">
               <Separator />
               <h1 className="underline">Types of {title}</h1>
-              <div className="w-full flex items-center justify-center gap-4">
+              <div className="w-full flex flex-col md:flex-row items-center justify-center gap-4">
                 {types?.map((serviceTypes) => (
                   <TypesOfService key={serviceTypes?.title} {...serviceTypes} />
                 ))}
