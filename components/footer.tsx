@@ -197,7 +197,7 @@ const Footer = () => {
           <span className="text-sm text-gray-50 sm:text-center dark:text-gray-400">
             © 2024{" "}
             <Link href={"#"} className="hover:underline font-semibold">
-              Himalayan Securities Banker Ltd™
+              Himalaya Securities Banker Ltd™
             </Link>
             . All Rights Reserved.
           </span>

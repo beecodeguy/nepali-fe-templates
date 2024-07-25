@@ -50,7 +50,7 @@ export default function Home() {
                 />
                 <BackgroundOverlay />
                 <CarouselAction
-                  heading={"Himalayan Securities Banker Ltd."}
+                  heading={"Himalaya Securities Banker Ltd."}
                   description={
                     "Himalaya Securities Banker Limited incorporated in 30th October 2023, is a Subsidiary of Himalayan Reinsurance Limited that provides Merchant Banking services as licensed by its apex resistor SEBON."
                   }

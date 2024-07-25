@@ -7,11 +7,11 @@ import React from "react";
 const CarouselAction = ({ heading, description, link }) => {
   return (
     <div className="absolute flex flex-col gap-4 w-full items-center justify-center h-full">
-      <div className="flex flex-col items-center justify-center gap-5 max-w-[600px] p-4 rounded-sm">
+      <div className="flex flex-col items-center justify-center gap-5 max-w-[700px] p-4 rounded-sm">
         <h1 className="text-4xl font-semibold text-slate-100 underline pb-1">
           {heading}
         </h1>
-        <p className="text-slate-100">{description}</p>
+        <p className="text-slate-100 max-w-[500px]">{description}</p>
         {link && (
           <Link href={link}>
             <Button variant="secondary">

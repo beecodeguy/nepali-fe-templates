@@ -1,4 +1,6 @@
 import Banner from "@/components/banner";
+import NoticeBanner from "@/components/notice-banner";
+import { NEWS } from "@/lib/consts";
 import React from "react";
 
 const bannerImage =
@@ -8,9 +10,12 @@ const NewsNoticeRoute = () => {
   return (
     <div>
       <Banner imageSrc={bannerImage} title={"News & Notices"} />
-      <section className="large-screen my-6 p-4">
-        <div className="grid w-full grid-cols-1 gap-4">
-          <h1>News</h1>
+      <section className="large-screen w-full my-6 p-4 flex flex-col items-center">
+        <h1 className="mb-6">News</h1>
+        <div className="grid w-full grid-cols-1 gap-6">
+          {NEWS?.map((item) => (
+            <NoticeBanner key={item.id} isFullWidth {...item} />
+          ))}
         </div>
       </section>
     </div>
