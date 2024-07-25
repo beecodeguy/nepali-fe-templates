@@ -50,9 +50,9 @@ export default function Home() {
                 />
                 <BackgroundOverlay />
                 <CarouselAction
-                  heading={"All Services"}
+                  heading={"Himalayan Securities Banker Ltd."}
                   description={
-                    " Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero, dolores nemo. Accusamus magnam modi tenetur sapiente veritatis minima optio"
+                    "Himalaya Securities Banker Limited incorporated in 30th October 2023, is a Subsidiary of Himalayan Reinsurance Limited that provides Merchant Banking services as licensed by its apex resistor SEBON."
                   }
                   link="/services"
                 />
@@ -79,7 +79,7 @@ export default function Home() {
                   description={
                     "In HSBL, we have a dedicated team who professionally handles our PMS clients. PMS involves management of client’s assets through investment in various financial instrument such as equity, fixed deposits, bonds, debentures etc. to generate steady return on investments in line with your financial goals."
                   }
-                  link="/services/portfolio-management"
+                  link="/services/portfolio-management-service"
                 />
               </div>
             </CarouselItem>
@@ -104,7 +104,7 @@ export default function Home() {
                   description={
                     "As a Depository participant (DP) Himalaya Securities Banker Ltd acts as an intermediary between the depository system (CDS &amp; Clearing Ltd) and our valued customers. Hence, beneficiary owner can open Demat Account at HSBL and we aim to provide prompt service to all our customers."
                   }
-                  link="/services/dp"
+                  link="/services/depository-participants"
                 />
               </div>
             </CarouselItem>

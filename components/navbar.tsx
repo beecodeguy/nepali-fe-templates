@@ -55,7 +55,8 @@ const navLinks = [
       },
     ],
   },
-  { id: "6", route: "#", title: "Information Center" },
+  { id: "6", route: "#footer", title: "Information Center" },
+  { id: "7", route: "/news-notices", title: "News & Notices" },
 ];
 
 const Navbar = () => {

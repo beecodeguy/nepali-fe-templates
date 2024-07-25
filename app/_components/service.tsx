@@ -64,7 +64,7 @@ const fallbackUrl =
 
 const ServiceCard = ({ title, slug, imageLink, description }) => {
   return (
-    <Card className="group cursor-pointer max-w-[405px] hover:bg-foreground bg-white p-0 relative">
+    <Card className="group cursor-pointer max-w-[405px] hover:bg-foreground bg-white p-0 relative flex flex-col">
       <CardHeader className="p-0">
         <div
           className="image relative"
@@ -83,22 +83,22 @@ const ServiceCard = ({ title, slug, imageLink, description }) => {
           />
         </div>
       </CardHeader>
-      <CardContent className="p-4">
+      <CardContent className="flex flex-col p-4 pb-2 h-full">
         <CardTitle className="transition-all group-hover:underline">
           {title}
         </CardTitle>
         <CardDescription className="mt-4 line-clamp-3">
           {description}
         </CardDescription>
+        <CardFooter className="p-0 mt-auto">
+          <Link
+            href={`/services/${slug}`}
+            className="underline text-sky-500 transition-colors hover:text-sky-700"
+          >
+            <LinkButton />
+          </Link>
+        </CardFooter>
       </CardContent>
-      <CardFooter className="pb-0">
-        <Link
-          href={`/services/${slug}`}
-          className="underline text-sky-500 transition-colors hover:text-sky-700"
-        >
-          <LinkButton />
-        </Link>
-      </CardFooter>
     </Card>
   );
 };
