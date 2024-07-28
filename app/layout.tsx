@@ -8,6 +8,8 @@ import { cn } from "@/lib/utils";
 //Styled Imports
 import "./globals.css";
 import "./main.scss";
+import "@devnomic/marquee/dist/index.css";
+import TopNews from "@/components/top-news";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -24,6 +26,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={cn(inter.className, "styled-scrollbar")}>
+        <TopNews />
         <Navbar />
         <section className="w-full min-h-screen relative">{children}</section>
         <Footer />
