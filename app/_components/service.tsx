@@ -105,7 +105,7 @@ const ServiceCard = ({ title, slug, imageLink, description }) => {
 
 const ServiceSection = () => {
   return (
-    <section className="flex flex-col gap-2 justify-center items-center">
+    <section className="flex flex-col gap-2 justify-center items-center relative">
       <h1 className="underline text-primary text-4xl">Our Services</h1>
       <p className="capitalize">
         Presenting Banking Plan & Service That are Right For You

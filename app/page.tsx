@@ -54,7 +54,7 @@ export default function Home() {
                   description={
                     "Himalaya Securities Banker Limited incorporated in 30th October 2023, is a Subsidiary of Himalayan Reinsurance Limited that provides Merchant Banking services as licensed by its apex resistor SEBON."
                   }
-                  link="/services"
+                  link="/about-us"
                 />
               </div>
             </CarouselItem>
@@ -131,7 +131,14 @@ export default function Home() {
       </div> */}
       <section className="p-4 mt-4 grow large-screen">
         <Separator className="my-4" />
+      </section>
+      <section className="w-full py-2 relative">
+        <div className="absolute w-full h-full opacity-30 inset-0">
+          <Image src="/assets/mountain.jpg" fill alt="overlay" />
+        </div>
         <ServiceSection />
+      </section>
+      <section className="p-4 mt-1 grow large-screen">
         <Separator className="my-4" />
         <Notices />
       </section>

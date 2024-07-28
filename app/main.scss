@@ -1,0 +1,23 @@
+//Webkit scrollbar
+.styled-scrollbar {
+  scrollbar-width: auto; /* Firefox */
+  -ms-overflow-style: none;
+
+  &::-webkit-scrollbar {
+    width: 4px;
+    height: 5px;
+  }
+
+  ::-webkit-scrollbar-track {
+    -webkit-box-shadow: none !important;
+    background: rgb(255 255 255 / 10%);
+    border-radius: 10px;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply bg-gray-400 dark:bg-[#fefefe];
+
+    border-radius: 12px;
+    width: 6px;
+  }
+}

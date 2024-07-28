@@ -1,3 +1,4 @@
+import BackgroundOverlay from "@/components/background-overlay";
 import Banner from "@/components/banner";
 import NoticeBanner from "@/components/notice-banner";
 import { NEWS } from "@/lib/consts";
@@ -10,14 +11,16 @@ const NewsNoticeRoute = () => {
   return (
     <div>
       <Banner imageSrc={bannerImage} title={"News & Notices"} />
-      <section className="large-screen w-full my-6 p-4 flex flex-col items-center">
-        <h1 className="mb-6">News</h1>
-        <div className="grid w-full grid-cols-1 gap-6">
-          {NEWS?.map((item) => (
-            <NoticeBanner key={item.id} isFullWidth {...item} />
-          ))}
-        </div>
-      </section>
+      <BackgroundOverlay>
+        <section className="large-screen w-full my-6 p-4 flex flex-col items-center">
+          <h1 className="mb-6">News</h1>
+          <div className="grid w-full grid-cols-1 gap-6">
+            {NEWS?.map((item) => (
+              <NoticeBanner key={item.id} isFullWidth {...item} />
+            ))}
+          </div>
+        </section>
+      </BackgroundOverlay>
     </div>
   );
 };

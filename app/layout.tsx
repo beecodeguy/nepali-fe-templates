@@ -1,9 +1,13 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
-import "./globals.css";
 import Navbar from "@/components/navbar";
 import Footer from "@/components/footer";
 import ToastProvider from "@/providers/toast-provider";
+import { cn } from "@/lib/utils";
+
+//Styled Imports
+import "./globals.css";
+import "./main.scss";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -19,7 +23,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>
+      <body className={cn(inter.className, "styled-scrollbar")}>
         <Navbar />
         <section className="w-full min-h-screen relative">{children}</section>
         <Footer />
