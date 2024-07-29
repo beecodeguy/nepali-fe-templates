@@ -11,6 +11,9 @@ import "./main.scss";
 import "@devnomic/marquee/dist/index.css";
 import TopNews from "@/components/top-news";
 import HotNavs from "@/components/hot-navs";
+import HotModals from "@/components/hot-modals";
+import Image from "next/image";
+import ModalProvider from "@/providers/modal-provider";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -33,6 +36,7 @@ export default function RootLayout({
         <section className="w-full min-h-screen relative">{children}</section>
         <Footer />
         <ToastProvider />
+        <ModalProvider />
       </body>
     </html>
   );
