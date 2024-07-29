@@ -1,3 +1,4 @@
+import { isCompleteUrl } from "@/lib/utils";
 import {
   Boxes,
   Landmark,
@@ -24,6 +25,7 @@ const HoverLinkItem = ({ link = "", title }) => {
   return (
     <Link
       href={link || "#"}
+      target={isCompleteUrl(link) ? "_blank" : "_self"}
       className="hot-navs-gradient -right-[130px] relative rounded-3xl p-4 text-black flex items-center gap-4 transition-all hover:ease-linear hover:right-0"
     >
       {Icons[title] || <Boxes size={24} className="shrink-0 text-white" />}
@@ -36,10 +38,13 @@ const HotNavs = () => {
   return (
     <div className="fixed z-10 top-40 right-0">
       <div className="flex flex-col gap-3 relative">
-        <HoverLinkItem title={"Notices"} />
-        <HoverLinkItem title="Downloads" />
+        <HoverLinkItem title={"Notices"} link="/news-notices" />
+        <HoverLinkItem title="Downloads" link="/downloads" />
         <HoverLinkItem title={"Contact"} link="#footer" />
-        <HoverLinkItem title="Meroshare Login" />
+        <HoverLinkItem
+          title="Meroshare Login"
+          link="https://meroshare.cdsc.com.np"
+        />
         <HoverLinkItem title={"PMS Login"} />
       </div>
     </div>
