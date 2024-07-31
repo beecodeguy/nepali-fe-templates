@@ -52,19 +52,20 @@ const navLinks = [
 const Navbar = () => {
   return (
     <div className="sticky bg-foreground top-0 flex w-full flex-col z-30">
-      <header className="w-full py-2 md:py-0 flex justify-end items-center gap-4 border-b bg-blue-skin-primary md:bg-white px-4 md:px-6 md:pr-0">
+      <header className="w-full py-2 md:py-0 flex justify-end items-center gap-4 border-b bg-blue-skin-primary md:bg-white px-4 md:px-6 md:pr-0 relative pb-4">
+        <div className="hidden lg:block bottom-0 absolute h-[14px] w-full left-0 bg-blue-skin-primary"></div>
         <nav className="relative overflow-hidden hidden w-full py-2 gap-6 text-lg font-medium md:pr-6 md:flex md:flex-row md:items-center md:justify-between md:shrink-0 md:gap-5 md:text-sm lg:gap-6">
           <Link
             href="/"
-            className="flex items-center gap-2 text-lg font-semibold md:text-base h-24 w-[36rem] relative z-10"
+            className="flex items-center gap-2 text-lg font-semibold md:text-base h-24 w-[36rem] relative py-4"
           >
             <Image alt="logo" src="/assets/himalaya_logo.png" fill />
             <span className="sr-only">Capital Site</span>
           </Link>
           <div
-            className="absolute top-0 -right-[120px] w-full h-full"
+            className="absolute bottom-0 -right-[120px] w-full h-[80%]"
             style={{
-              background: `url('/assets/svg-path.svg')`,
+              background: `url('/assets/svg-path-2.svg')`,
               backgroundRepeat: "no-repeat",
               backgroundSize: "cover",
             }}
