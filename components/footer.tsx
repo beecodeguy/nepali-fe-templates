@@ -89,7 +89,7 @@ const NavLinkItem = ({ title, link = "" }) => {
 
 const Footer = () => {
   return (
-    <footer id="footer" className="p-4 bg-blue-skin-secondary border-t sm:p-6">
+    <footer id="footer" className="p-4 bg-blue-skin-primary border-t sm:p-6">
       <div className="mx-auto max-w-screen-xl">
         <div className="md:flex md:justify-between">
           {/* <div className="mb-6 md:mb-0">

@@ -56,6 +56,7 @@ const config = {
         blue: {
           skin: {
             secondary: "rgba(var(--blue-secondary))",
+            primary: "hsl(var(--blue-primary))",
           },
         },
       },
