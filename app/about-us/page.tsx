@@ -99,7 +99,7 @@ const AboutUsPage = () => {
           </div>
         </section>
         <Separator />
-        <section className="bg-gray-50">
+        <section>
           <div className="grid p-4 my-4 grid-cols-1 md:grid-cols-3 gap-4 large-screen">
             <MissionCard
               title="Vision"
@@ -118,7 +118,7 @@ growth opportunities."
         </section>
         <Separator />
         <section className="large-screen my-6 px-4">
-          <h1 className="underline mb-3 text-center text-blue-700 text-4xl font-bold">
+          <h1 className="underline mb-3 text-center text-slate-600 text-4xl font-bold">
             Board of Directors
           </h1>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
@@ -128,9 +128,9 @@ growth opportunities."
           </div>
         </section>
         <Separator />
-        <section className="bg-gray-50">
+        <section className="">
           <div className="large-screen my-4 p-4">
-            <h1 className="underline mb-3 text-center text-blue-700 text-4xl font-bold">
+            <h1 className="underline mb-3 text-center text-slate-600 text-4xl font-bold">
               Management Team
             </h1>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4">

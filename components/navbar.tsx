@@ -70,7 +70,7 @@ const Navbar = () => {
               backgroundSize: "cover",
             }}
           />
-          <div className="w-full flex gap-6 ml-auto justify-end items-center z-10">
+          <div className="w-full flex gap-6 ml-auto justify-end items-center z-10 mt-4">
             {navLinks?.map(({ id, route, title, subLinks }) => (
               <NavItem
                 key={id}

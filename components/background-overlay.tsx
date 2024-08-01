@@ -12,7 +12,7 @@ const BackgroundOverlay = ({
 
   return (
     <section className="relative">
-      <div className="absolute w-full h-full opacity-20 inset-0">
+      <div className="absolute w-full h-full opacity-20 inset-0 -z-[1]">
         <Image src={src} fill alt="overlay" />
       </div>
       {children}

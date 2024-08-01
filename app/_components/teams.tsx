@@ -7,7 +7,7 @@ const userImage =
 
 const Teams = ({ title, name }) => {
   return (
-    <div className="px-3 flex items-center cursor-pointer rounded-lg border shadow min-h-[300px] sm:flex dark:bg-gray-800 dark:border-gray-700 hover:bg-sky-50">
+    <div className="px-3 flex items-center cursor-pointer rounded-lg border border-slate-300 shadow min-h-[100px] sm:flex dark:bg-gray-800 dark:border-gray-700 hover:bg-sky-50">
       <Image
         className="rounded-full aspect-square"
         src={userImage}
