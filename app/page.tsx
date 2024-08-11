@@ -15,6 +15,10 @@ import {
 import Autoplay from "embla-carousel-autoplay";
 import BackgroundOverlay from "@/components/overlay";
 import CarouselAction from "./_components/carousel-action";
+import TestimonialSection from "./_components/testimonial-section";
+import DetailsSection from "./_components/details-section";
+import FeaturedSection from "./_components/featured-section";
+import CalculatorSection from "./_components/calculator-section";
 
 const StockMarketLottie = require("../constants/lottie/stock-market.json");
 
@@ -129,18 +133,42 @@ export default function Home() {
       {/* <div className="h-[600px] w-full relative">
         <Image src={imageLink} alt="banner" fill />
       </div> */}
-      <section className="p-4 mt-4 grow large-screen">
-        <Separator className="my-4" />
-      </section>
       <section className="w-full py-2 relative">
+        <Separator className="my-4" />
         <div className="absolute w-full h-full opacity-30 inset-0">
           <Image src="/assets/mountain.jpg" fill alt="overlay" />
         </div>
         <ServiceSection />
       </section>
-      <section className="p-4 mt-1 grow large-screen">
+      <section className="w-full py-2 relative">
+        <div className="w-full p-4 mt-1 grow large-screen">
+          <DetailsSection />
+        </div>
+      </section>
+      <Separator className="my-4" />
+      <section className="w-full py-2 relative">
+        {/* <div className="absolute w-full h-full opacity-30 inset-0">
+          <Image src="/assets/mountain.jpg" fill alt="overlay" />
+        </div> */}
+        <div className="w-full p-4 mt-1 grow large-screen">
+          <FeaturedSection />
+        </div>
+      </section>
+      <Separator className="my-4" />
+      <section className="w-full py-2 relative">
+        <div className="w-full p-4 mt-1 grow large-screen">
+          <CalculatorSection />
+        </div>
+      </section>
+      <Separator className="my-4" />
+      <section className="w-full py-2 relative">
+        <div className="w-full p-4 mt-1 grow large-screen">
+          <Notices />
+        </div>
+      </section>
+      <section className="p-4 mt-1 w-full grow large-screen">
         <Separator className="my-4" />
-        <Notices />
+        <TestimonialSection />
       </section>
     </main>
   );

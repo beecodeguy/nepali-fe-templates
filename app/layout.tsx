@@ -14,6 +14,7 @@ import HotNavs from "@/components/hot-navs";
 import HotModals from "@/components/hot-modals";
 import Image from "next/image";
 import ModalProvider from "@/providers/modal-provider";
+import HotLinks from "@/components/hot-links";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -31,6 +32,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={cn(inter.className, "styled-scrollbar relative")}>
         <TopNews />
+        <HotLinks />
         <HotNavs />
         <Navbar />
         <section className="w-full min-h-screen relative">{children}</section>

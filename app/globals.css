@@ -115,6 +115,14 @@
   );
 }
 
+.hot-navs-gradient_reversed {
+  background: radial-gradient(
+    circle at 12.3% 19.3%,
+    rgb(95, 209, 249) 0%,
+    rgb(85, 88, 218) 100.2%
+  );
+}
+
 .footer-link {
   @apply transition-colors hover:underline hover:text-orange-100;
 }

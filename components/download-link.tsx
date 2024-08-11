@@ -1,6 +1,5 @@
 "use client";
 
-import React from "react";
 import { ArrowBigDownDash } from "lucide-react";
 import toast from "react-hot-toast";
 

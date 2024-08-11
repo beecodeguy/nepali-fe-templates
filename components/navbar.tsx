@@ -13,7 +13,7 @@ const NavItem = ({ route, title, className = "", subLinks = [] as any }) => {
     <Link
       href={route}
       className={cn(
-        "text-white text-base transition-colors hover:text-slate-300 hover:underline",
+        "text-primary text-base transition-colors hover:text-blue-600 hover:underline",
         className
       )}
     >
@@ -28,7 +28,7 @@ const NavItem = ({ route, title, className = "", subLinks = [] as any }) => {
 
 const navLinks = [
   // { id: "1", route: "/", title: "Home" },
-  { id: "1", route: "https://himalayanre.com/", title: "Himalayan Re" },
+  // { id: "1", route: "https://himalayanre.com/", title: "Himalayan Re" },
   { id: "2", route: "/about-us", title: "About Us" },
   { id: "3", route: "/services", title: "Services" },
   { id: "5", route: "/downloads", title: "Downloads" },
@@ -51,9 +51,9 @@ const navLinks = [
 
 const Navbar = () => {
   return (
-    <div className="sticky bg-foreground top-0 flex w-full flex-col z-30">
-      <header className="w-full py-2 md:py-0 flex justify-end items-center gap-4 border-b bg-blue-skin-primary md:bg-white px-4 md:px-6 md:pr-0 relative pb-4">
-        <div className="hidden lg:block bottom-0 absolute h-[14px] w-full left-0 bg-blue-skin-primary"></div>
+    <div className="sticky bg-white top-0 flex w-full flex-col z-30">
+      <header className="w-full py-2 md:py-0 flex justify-end items-center gap-4 border-b bg-white md:bg-white px-4 md:px-6 md:pr-0 relative pb-4">
+        {/* <div className="hidden lg:block bottom-0 absolute h-[14px] w-full left-0 bg-blue-skin-primary"></div> */}
         <nav className="relative overflow-hidden hidden w-full py-2 gap-6 text-lg font-medium md:pr-6 md:flex md:flex-row md:items-center md:justify-between md:shrink-0 md:gap-5 md:text-sm lg:gap-6">
           <Link
             href="/"
@@ -62,14 +62,14 @@ const Navbar = () => {
             <Image alt="logo" src="/assets/himalaya_logo.png" fill />
             <span className="sr-only">Capital Site</span>
           </Link>
-          <div
+          {/* <div
             className="absolute bottom-0 -right-[120px] w-full h-[80%]"
             style={{
               background: `url('/assets/svg-path-2.svg')`,
               backgroundRepeat: "no-repeat",
               backgroundSize: "cover",
             }}
-          />
+          /> */}
           <div className="w-full flex gap-6 ml-auto justify-end items-center z-10 mt-4">
             {navLinks?.map(({ id, route, title, subLinks }) => (
               <NavItem
