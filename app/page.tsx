@@ -133,20 +133,20 @@ export default function Home() {
       {/* <div className="h-[600px] w-full relative">
         <Image src={imageLink} alt="banner" fill />
       </div> */}
-      <section className="w-full py-2 relative">
-        <Separator className="my-4" />
-        <div className="absolute w-full h-full opacity-30 inset-0">
+      <section className="w-full py-2 my-5 relative">
+        {/* <Separator className="my-4" /> */}
+        {/* <div className="absolute w-full h-full opacity-30 inset-0">
           <Image src="/assets/mountain.jpg" fill alt="overlay" />
-        </div>
+        </div> */}
         <ServiceSection />
       </section>
-      <section className="w-full py-2 relative">
+      <section className="w-full py-2 my-5 relative">
         <div className="w-full p-4 mt-1 grow large-screen">
           <DetailsSection />
         </div>
       </section>
-      <Separator className="my-4" />
-      <section className="w-full py-2 relative">
+      {/* <Separator className="my-4" /> */}
+      <section className="w-full py-2 my-5 relative">
         {/* <div className="absolute w-full h-full opacity-30 inset-0">
           <Image src="/assets/mountain.jpg" fill alt="overlay" />
         </div> */}
@@ -154,20 +154,20 @@ export default function Home() {
           <FeaturedSection />
         </div>
       </section>
-      <Separator className="my-4" />
-      <section className="w-full py-2 relative">
+      {/* <Separator className="my-4" /> */}
+      <section className="w-full py-2 my-5 relative">
         <div className="w-full p-4 mt-1 grow large-screen">
           <CalculatorSection />
         </div>
       </section>
-      <Separator className="my-4" />
-      <section className="w-full py-2 relative">
+      {/* <Separator className="my-4" /> */}
+      <section className="w-full py-2 my-5 relative">
         <div className="w-full p-4 mt-1 grow large-screen">
           <Notices />
         </div>
       </section>
-      <section className="p-4 mt-1 w-full grow large-screen">
-        <Separator className="my-4" />
+      <section className="p-4 my-5 w-full grow large-screen">
+        {/* <Separator className="my-4" /> */}
         <TestimonialSection />
       </section>
     </main>
