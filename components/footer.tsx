@@ -1,77 +1,31 @@
 import { footerPins } from "@/lib/consts";
-import { isCompleteUrl } from "@/lib/utils";
-import {
-  Facebook,
-  Instagram,
-  Mail,
-  Package2,
-  Phone,
-  PhoneCall,
-  Youtube,
-  MapPin,
-} from "lucide-react";
+import { fullYear, isCompleteUrl } from "@/lib/utils";
+import { TFooterLink, TSocialLink, TSocialLinkTypes } from "@/types";
+import { Mail, Phone, MapPin } from "lucide-react";
 import Link from "next/link";
-import React from "react";
+import React, { ReactNode } from "react";
+import { FaFacebook, FaInstagram, FaYoutube } from "react-icons/fa";
+import { FaXTwitter } from "react-icons/fa6";
+import HotLinks from "./hot-links";
 
-const importantLinks = [
-  {
-    id: "1",
-    title: "Securities Board of Nepal",
-    link: "https://www.sebon.gov.np/",
-  },
-  { id: "2", title: "Nepal Stock Exchange", link: "https://nepalstock.com/" },
-  {
-    id: "3",
-    title: "CDS & Clearig Ltd.",
+const SocialLink = ({ url, type }: { url: string; type: TSocialLinkTypes }) => {
+  const Icons: Record<TSocialLinkTypes, ReactNode> = {
+    facebook: <FaFacebook size={24} />,
+    instagram: <FaInstagram size={24} />,
+    youtube: <FaYoutube size={24} />,
+    twitter: <FaXTwitter size={24} />,
+  };
 
-    link: "https://cdsc.com.np/",
-  },
-  {
-    id: "4",
-    title: "Merchant Banking Association",
-    link: "https://mban.com.np/",
-  },
-  {
-    id: "5",
-    title: "Office of Company Registrar",
-    link: "https://ocr.gov.np/",
-  },
-];
-
-const usefulLinks = [
-  {
-    id: "1",
-    title: "Nepal Rastra Bank",
-    link: "https://www.nrb.org.np/",
-  },
-  { id: "2", title: "Meroshare", link: "https://meroshare.cdsc.com.np" },
-  {
-    id: "3",
-    title: "United Nations Security Council list",
-    link: "https://main.un.org/securitycouncil/en/content/un-sc-consolidated-list",
-  },
-  {
-    id: "4",
-    title: "Targeted Sanction List (Home Affairs)",
-    link: "https://www.moha.gov.np/page/targeted-sanction-list",
-  },
-];
-
-const quickLinks = [
-  {
-    id: "1",
-    title: "Downloads",
-    link: "/downloads",
-  },
-  {
-    id: "2",
-    title: "News",
-    link: "#",
-  },
-  { id: "3", title: "Notice", link: "#" },
-  // { id: "4", title: "Career" },
-  { id: "5", title: "Contact", link: "#" },
-];
+  return (
+    <Link
+      href={url}
+      target="_blank"
+      className="text-white hover:text-slate-500"
+    >
+      {Icons[type]}
+    </Link>
+  );
+};
 
 const NavLinkItem = ({ title, link = "" }) => {
   return (
@@ -87,12 +41,26 @@ const NavLinkItem = ({ title, link = "" }) => {
   );
 };
 
-const Footer = () => {
+const Footer = ({
+  socialLinks,
+  importantLinks,
+  usefulLinks,
+  quickLinks,
+  companyInfo,
+}: {
+  socialLinks: TSocialLink[];
+  importantLinks: TFooterLink[];
+  usefulLinks: TFooterLink[];
+  quickLinks: TFooterLink[];
+  companyInfo: Record<string, any>;
+}) => {
   return (
-    <footer id="footer" className="p-4 bg-primary border-t sm:p-6">
-      <div className="mx-auto max-w-screen-xl">
-        <div className="md:flex md:justify-between">
-          {/* <div className="mb-6 md:mb-0">
+    <>
+      {!!socialLinks?.length && <HotLinks socialLinks={socialLinks} />}
+      <footer id="footer" className="p-4 bg-primary border-t sm:p-6">
+        <div className="mx-auto max-w-screen-xl">
+          <div className="md:flex md:justify-between">
+            {/* <div className="mb-6 md:mb-0">
             <Link href="#" className="flex items-center gap-3">
               <Package2 size={40} />
               <span className="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">
@@ -100,121 +68,129 @@ const Footer = () => {
               </span>
             </Link>
           </div> */}
-          <div className="grid grid-cols-2 gap-3 sm:gap-4 md:grid-cols-3 lg:grid-cols-5">
-            <div>
-              <h6 className="mb-6 text-white uppercase dark:text-white">
-                Quick Links
-              </h6>
-              <ul className="text-white dark:text-gray-400">
-                {quickLinks.map((linkItem) => (
-                  <NavLinkItem
-                    key={linkItem.id}
-                    title={linkItem.title}
-                    link={linkItem.link}
-                  />
-                ))}
-              </ul>
-            </div>
-            <div>
-              <h6 className="mb-6 text-white uppercase dark:text-white">
-                Important Links
-              </h6>
-              <ul className="text-white dark:text-gray-400">
-                {importantLinks.map((linkItem) => (
-                  <NavLinkItem
-                    key={linkItem.id}
-                    title={linkItem.title}
-                    link={linkItem.link}
-                  />
-                ))}
-              </ul>
-            </div>
-            <div>
-              <h6 className="mb-6 text-white uppercase dark:text-white">
-                Useful Links
-              </h6>
-              <ul className="text-white dark:text-gray-400">
-                {usefulLinks.map((linkItem) => (
-                  <NavLinkItem
-                    key={linkItem.id}
-                    title={linkItem.title}
-                    link={linkItem.link}
-                  />
-                ))}
-              </ul>
-            </div>
-            <div>
-              <h6 className="mb-6 text-white uppercase dark:text-white">
-                Contact
-              </h6>
-              <ul className="text-white dark:text-gray-400">
-                <li className="mb-4">
-                  <p className="flex items-center gap-2 footer-text">
-                    <MapPin size={16} className="shrink-0" />
-                    <span>{footerPins.location}</span>
-                  </p>
-                </li>
-                <li className="mb-4">
-                  <p className="flex items-center gap-2 footer-text">
-                    <Phone size={16} className="shrink-0" />
-                    <span>{footerPins.phone}</span>
-                  </p>
-                </li>
-                <li className="mb-4">
-                  <p className="flex items-center gap-2 footer-text">
-                    <Mail size={16} className="shrink-0" />
-                    <span>info@capital.com.np</span>
-                  </p>
-                </li>
-              </ul>
-            </div>
-            <div>
-              <h6 className="mb-6 text-white uppercase dark:text-white">
-                Information Officer
-              </h6>
-              <ul className="text-white dark:text-gray-400">
-                <li className="mb-4">
-                  <p className="font-semibold">Officer Name</p>
-                </li>
-                <li className="mb-4">
-                  <p className="flex items-center gap-2 footer-text">
-                    <Phone size={16} />
-                    <span>01-*******</span>
-                  </p>
-                </li>
-                <li>
-                  <p className="flex items-center gap-2 footer-text">
-                    <Mail size={16} />
-                    <span>mail@capital.com.np</span>
-                  </p>
-                </li>
-              </ul>
+            <div className="grid grid-cols-2 gap-3 sm:gap-4 md:grid-cols-3 lg:grid-cols-5">
+              {!!quickLinks?.length && (
+                <div>
+                  <h6 className="mb-6 text-white uppercase dark:text-white">
+                    Quick Links
+                  </h6>
+                  <ul className="text-white dark:text-gray-400">
+                    {quickLinks.map((linkItem) => (
+                      <NavLinkItem
+                        key={linkItem.id}
+                        title={linkItem.title}
+                        link={linkItem.link}
+                      />
+                    ))}
+                  </ul>
+                </div>
+              )}
+              {!!importantLinks?.length && (
+                <div>
+                  <h6 className="mb-6 text-white uppercase dark:text-white">
+                    Important Links
+                  </h6>
+                  <ul className="text-white dark:text-gray-400">
+                    {importantLinks.map((linkItem) => (
+                      <NavLinkItem
+                        key={linkItem.id}
+                        title={linkItem.title}
+                        link={linkItem.link}
+                      />
+                    ))}
+                  </ul>
+                </div>
+              )}
+              {!!usefulLinks?.length && (
+                <div>
+                  <h6 className="mb-6 text-white uppercase dark:text-white">
+                    Useful Links
+                  </h6>
+                  <ul className="text-white dark:text-gray-400">
+                    {usefulLinks.map((linkItem) => (
+                      <NavLinkItem
+                        key={linkItem.id}
+                        title={linkItem.title}
+                        link={linkItem.link}
+                      />
+                    ))}
+                  </ul>
+                </div>
+              )}
+
+              <div>
+                <h6 className="mb-6 text-white uppercase dark:text-white">
+                  Contact
+                </h6>
+                <ul className="text-white dark:text-gray-400">
+                  <li className="mb-4">
+                    <p className="flex items-center gap-2 footer-text">
+                      <MapPin size={16} className="shrink-0" />
+                      <span>{companyInfo?.location || "Location"}</span>
+                    </p>
+                  </li>
+                  <li className="mb-4">
+                    <p className="flex items-center gap-2 footer-text">
+                      <Phone size={16} className="shrink-0" />
+                      <span>{companyInfo?.phone || "Contact"}</span>
+                    </p>
+                  </li>
+                  <li className="mb-4">
+                    <p className="flex items-center gap-2 footer-text">
+                      <Mail size={16} className="shrink-0" />
+                      <span>{companyInfo?.email || "Email"}</span>
+                    </p>
+                  </li>
+                </ul>
+              </div>
+              {companyInfo?.contactPerson?.name && (
+                <div className="ml-4">
+                  <h6 className="mb-6 text-white uppercase dark:text-white">
+                    Information Officer
+                  </h6>
+                  <ul className="text-white dark:text-gray-400">
+                    <li className="mb-4">
+                      <p className="font-semibold">
+                        {companyInfo?.contactPerson?.name}
+                      </p>
+                    </li>
+                    <li className="mb-4">
+                      <p className="flex items-center gap-2 footer-text">
+                        <Phone size={16} />
+                        <span>{companyInfo?.contactPerson?.phone}</span>
+                      </p>
+                    </li>
+                    <li>
+                      <p className="flex items-center gap-2 footer-text">
+                        <Mail size={16} className="shrink-0" />
+                        <span>{companyInfo?.contactPerson?.email}</span>
+                      </p>
+                    </li>
+                  </ul>
+                </div>
+              )}
             </div>
           </div>
-        </div>
-        <hr className="my-6 border-gray-200 sm:mx-auto dark:border-gray-700 lg:my-8" />
-        <div className="sm:flex sm:items-center sm:justify-between">
-          <span className="text-sm text-gray-50 sm:text-center dark:text-gray-400">
-            © 2024{" "}
-            <Link href={"#"} className="hover:underline font-semibold">
-              Himalaya Securities Banker Ltd™
-            </Link>
-            . All Rights Reserved.
-          </span>
-          <div className="flex mt-4 space-x-6 sm:justify-center sm:mt-0">
-            <Link href={"#"} className="text-white hover:text-slate-500">
-              <Facebook />
-            </Link>
-            <Link href={"#"} className="text-white hover:text-slate-500">
-              <Instagram />
-            </Link>
-            <Link href={"#"} className="text-white hover:text-slate-500">
-              <Youtube />
-            </Link>
+          <hr className="my-6 border-gray-200 sm:mx-auto dark:border-gray-700 lg:my-8" />
+          <div className="sm:flex sm:items-center sm:justify-between">
+            <span className="text-sm text-gray-50 sm:text-center dark:text-gray-400">
+              © {fullYear()}{" "}
+              <Link href={"#"} className="hover:underline font-semibold">
+                {companyInfo?.name || "Company Name"}™
+              </Link>
+              . All Rights Reserved.
+            </span>
+            {!!socialLinks?.length && (
+              <div className="flex mt-4 space-x-6 sm:justify-center sm:mt-0">
+                {socialLinks.map(({ url, type }) => (
+                  <SocialLink type={type} url={url} key={type} />
+                ))}
+              </div>
+            )}
           </div>
         </div>
-      </div>
-    </footer>
+      </footer>
+    </>
   );
 };
 

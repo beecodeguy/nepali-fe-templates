@@ -10,3 +10,7 @@ export const isCompleteUrl = (url: string) => {
   const regex = /^(https?:\/\/).+/;
   return regex.test(url);
 };
+
+export const fullYear = () => {
+  return new Date().getFullYear();
+};
