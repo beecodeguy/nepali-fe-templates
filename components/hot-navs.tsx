@@ -26,7 +26,7 @@ const HoverLinkItem = ({ link = "", title }) => {
     <Link
       href={link || "#"}
       target={isCompleteUrl(link) ? "_blank" : "_self"}
-      className="hot-navs-gradient -right-[130px] relative rounded-3xl p-3 text-black flex items-center gap-4 transition-all hover:ease-linear hover:right-0"
+      className="hot-navs-gradient z-10 -right-[130px] relative rounded-3xl p-3 text-black flex items-center gap-4 transition-all hover:ease-linear hover:right-0"
     >
       {Icons[title] || <Boxes size={24} className="shrink-0 text-white" />}
       <p className="text-sm font-normal text-white">{title}</p>
@@ -36,7 +36,7 @@ const HoverLinkItem = ({ link = "", title }) => {
 
 const HotNavs = () => {
   return (
-    <div className="fixed z-10 top-60 right-0">
+    <div className="fixed top-60 right-0 z-[2]">
       <div className="flex flex-col gap-3 relative">
         <HoverLinkItem title={"Notices"} link="/news-notices" />
         <HoverLinkItem title="Downloads" link="/downloads" />

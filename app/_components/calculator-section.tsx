@@ -1,10 +1,15 @@
+import Calculator from "@/components/calculator/calculator";
+import { Card } from "@/components/ui/card";
+import { Separator } from "@/components/ui/separator";
 import React from "react";
 
 const CalculatorSection = () => {
   return (
-    <div>
-      <h1 className="underline text-primary text-4xl">Calculator Section</h1>
-    </div>
+    <Card className="border-primary rounded-md p-2">
+      <h1 className="text-2xl text-primary font-semibold my-2">Calculations</h1>
+      <Separator className="mb-3" />
+      <Calculator />
+    </Card>
   );
 };
 

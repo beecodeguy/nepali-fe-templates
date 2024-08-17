@@ -27,7 +27,7 @@ const imageLink =
 
 export default function Home() {
   return (
-    <main className="min-h-screen flex flex-col">
+    <main className="min-h-screen flex flex-col relative">
       {/* <WavyBackground> */}
       <div className="w-full relative">
         <BannerSlide />

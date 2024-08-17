@@ -19,7 +19,7 @@ const HoverLinkItem = ({ url = "", type }) => {
     <Link
       href={url || "#"}
       target={isCompleteUrl(url) ? "_blank" : "_self"}
-      className="hot-navs-gradient_reversed -left-[90px] relative rounded-3xl p-3 text-black flex items-center justify-end gap-4 transition-all hover:ease-linear hover:left-0 hover:flex-row-reverse"
+      className="hot-navs-gradient_reversed z-10 -left-[90px] relative rounded-3xl p-3 text-black flex items-center justify-end gap-4 transition-all hover:ease-linear hover:left-0 hover:flex-row-reverse"
     >
       <p className="text-sm font-normal text-white capitalize">{type}</p>
       {Icons[type] || <Boxes size={24} className="shrink-0 text-white" />}
@@ -29,7 +29,7 @@ const HoverLinkItem = ({ url = "", type }) => {
 
 const HotLinks = ({ socialLinks }: { socialLinks: TSocialLink[] }) => {
   return (
-    <div className="fixed z-10 top-60 left-0">
+    <div className="fixed top-60 left-0 z-[2]">
       <div className="flex flex-col gap-3 relative">
         {socialLinks?.map(({ type, url }) => (
           <HoverLinkItem key={type} type={type} url={url} />
