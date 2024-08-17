@@ -15,6 +15,7 @@ import HotNavs from "@/components/hot-navs";
 // Provider Imports
 import ToastProvider from "@/providers/toast-provider";
 import ModalProvider from "@/providers/modal-provider";
+import Script from "next/script";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -40,6 +41,10 @@ export default function RootLayout({
         {footer}
         <ToastProvider />
         <ModalProvider />
+        <Script
+          type="text/javascript"
+          src="https://embed.tawk.to/66bc90070cca4f8a7a75d3b5/1i58957sq"
+        ></Script>
       </body>
     </html>
   );

@@ -59,7 +59,7 @@ const Navbar = () => {
             href="/"
             className="flex items-center gap-2 text-lg font-semibold md:text-base h-24 w-[36rem] relative py-4"
           >
-            <Image alt="logo" src="/assets/himalaya_logo.png" fill />
+            <Image alt="logo" src="/assets/app_logo.png" fill />
             <span className="sr-only">Capital Site</span>
           </Link>
           {/* <div
@@ -83,10 +83,11 @@ const Navbar = () => {
         </nav>
         <Sheet>
           <SheetTrigger asChild>
-            <div className="shrink-0 items-center justify-center md:hidden w-16 relative shadow bg-white rounded-sm h-12">
+            <div className="shrink-0 items-center justify-center md:hidden w-[150px] relative shadow bg-slate-400 p-2 rounded-sm h-12">
               <Image
                 alt="logo"
-                src="/assets/himalaya_logo_only.png"
+                src="/assets/app_logo.png"
+                className="bg-transparent"
                 fill
                 style={{ objectFit: "contain" }}
               />
@@ -97,13 +98,15 @@ const Navbar = () => {
             <nav className="grid gap-6 text-lg font-medium">
               <Link
                 href="/"
-                className="flex items-center gap-2 text-lg font-semibold md:text-base"
+                className="flex items-center gap-2 text-lg font-semibold md:text-base relative border border-primary rounded mr-4"
               >
                 <Image
                   alt="logo"
-                  src="/assets/himalaya_logo_only.png"
-                  width={90}
-                  height={40}
+                  src="/assets/app_logo.png"
+                  // fill
+                  style={{ objectFit: "cover" }}
+                  width={200}
+                  height={200}
                 />
                 <span className="sr-only">Capital Site</span>
               </Link>

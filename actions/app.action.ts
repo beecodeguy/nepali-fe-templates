@@ -1,6 +1,7 @@
 import { TFooterLink, TSocialLink } from "@/types";
 
 export const getFooterContent = () => {
+  // TODO: FETCH HERE:
   return {
     socialLinks: [
       { id: 1, url: "", type: "facebook" },

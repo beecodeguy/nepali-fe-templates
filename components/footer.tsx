@@ -136,9 +136,11 @@ const Footer = ({
                     </p>
                   </li>
                   <li className="mb-4">
-                    <p className="flex items-center gap-2 footer-text">
+                    <p className=" w-full flex items-center gap-2 footer-text">
                       <Mail size={16} className="shrink-0" />
-                      <span>{companyInfo?.email || "Email"}</span>
+                      <span className="w-full break-words">
+                        {companyInfo?.email || "Email"}
+                      </span>
                     </p>
                   </li>
                 </ul>
