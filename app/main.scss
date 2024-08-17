@@ -21,3 +21,22 @@
     width: 6px;
   }
 }
+
+.swiper-pagination {
+  width: 100%;
+  height: 13px;
+}
+
+.swiper-pagination-bullet {
+  @apply bg-white border border-green-800;
+
+  width: 20px !important;
+  height: 20px !important;
+  background: white !important;
+  margin: 0 5px;
+  opacity: 1 !important;
+}
+
+.swiper-pagination-bullet-active {
+  background: hsl(var(--primary)) !important;
+}

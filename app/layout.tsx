@@ -6,6 +6,11 @@ import { cn } from "@/lib/utils";
 import "./globals.css";
 import "./main.scss";
 import "@devnomic/marquee/dist/index.css";
+// swiper styles
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
+import "swiper/css/scrollbar";
 
 // Component Imports
 import Navbar from "@/components/navbar";

@@ -12,13 +12,13 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel";
-import Autoplay from "embla-carousel-autoplay";
 import BackgroundOverlay from "@/components/overlay";
 import CarouselAction from "./_components/carousel-action";
 import TestimonialSection from "./_components/testimonial-section";
 import DetailsSection from "./_components/details-section";
 import FeaturedSection from "./_components/featured-section";
 import CalculatorSection from "./_components/calculator-section";
+import BannerSlide from "./_components/banner-swiper";
 
 const StockMarketLottie = require("../constants/lottie/stock-market.json");
 
@@ -30,92 +30,7 @@ export default function Home() {
     <main className="min-h-screen flex flex-col">
       {/* <WavyBackground> */}
       <div className="w-full relative">
-        <Carousel
-          className="w-full"
-          opts={{
-            loop: true,
-          }}
-        >
-          <CarouselContent>
-            <CarouselItem>
-              <div
-                className="relative"
-                style={{
-                  width: "100%",
-                  minHeight: "600px",
-                  maxHeight: "600px",
-                }}
-              >
-                <Image
-                  src={"/assets/mountain.jpg" || imageLink}
-                  fill
-                  alt="himalayan"
-                  style={{ objectFit: "cover" }}
-                />
-                <BackgroundOverlay />
-                <CarouselAction
-                  heading={"Himalaya Securities Banker Ltd."}
-                  description={
-                    "Himalaya Securities Banker Limited incorporated in 30th October 2023, is a Subsidiary of Himalayan Reinsurance Limited that provides Merchant Banking services as licensed by its apex resistor SEBON."
-                  }
-                  link="/about-us"
-                />
-              </div>
-            </CarouselItem>
-            <CarouselItem>
-              <div
-                className="relative"
-                style={{
-                  width: "100%",
-                  minHeight: "600px",
-                  maxHeight: "600px",
-                }}
-              >
-                <Image
-                  src={"/assets/portfolio_service.jpg" || imageLink}
-                  fill
-                  alt="himalayan"
-                  style={{ objectFit: "cover" }}
-                />
-                <BackgroundOverlay />
-                <CarouselAction
-                  heading={"Portfolio Management Service"}
-                  description={
-                    "In HSBL, we have a dedicated team who professionally handles our PMS clients. PMS involves management of client’s assets through investment in various financial instrument such as equity, fixed deposits, bonds, debentures etc. to generate steady return on investments in line with your financial goals."
-                  }
-                  link="/services/portfolio-management-service"
-                />
-              </div>
-            </CarouselItem>
-            <CarouselItem>
-              <div
-                className="relative"
-                style={{
-                  width: "100%",
-                  minHeight: "600px",
-                  maxHeight: "600px",
-                }}
-              >
-                <Image
-                  src={"/assets/nepali_paisa.jpg" || imageLink}
-                  fill
-                  alt="himalayan"
-                  style={{ objectFit: "cover" }}
-                />
-                <BackgroundOverlay />
-                <CarouselAction
-                  heading={"Depository Service"}
-                  description={
-                    "As a Depository participant (DP) Himalaya Securities Banker Ltd acts as an intermediary between the depository system (CDS &amp; Clearing Ltd) and our valued customers. Hence, beneficiary owner can open Demat Account at HSBL and we aim to provide prompt service to all our customers."
-                  }
-                  link="/services/depository-participants"
-                />
-              </div>
-            </CarouselItem>
-          </CarouselContent>
-          <CarouselPrevious />
-          <CarouselNext />
-        </Carousel>
+        <BannerSlide />
       </div>
       {/* <div className="flex flex-col items-center justify-center gap-5 px-3 max-w-[500px]">
         <h1 className="text-4xl text-primary font-bold">
