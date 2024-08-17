@@ -7,18 +7,27 @@ import { HoverCard, HoverCardTrigger, HoverCardContent } from "./ui/hover-card";
 import { Card } from "./ui/card";
 import NavSubLink from "./nav-sublink";
 
-const NavItem = ({ route, title, className = "", subLinks = [] as any }) => {
+const NavItem = ({
+  route,
+  title,
+  np = "",
+  className = "",
+  subLinks = [] as any,
+}) => {
   const isSubLink = subLinks.length > 0;
   return (
     <Link
       href={route}
       className={cn(
-        "text-primary text-base transition-colors hover:text-blue-600 hover:underline",
+        "text-primary text-base transition-colors min-w-[80px] hover:text-blue-600 hover:underline",
         className
       )}
     >
       {!isSubLink ? (
-        <span>{title}</span>
+        <div className="nav-hover-text relative">
+          <span className="default-text">{title}</span>
+          <span className="translated-text">{np || title}</span>
+        </div>
       ) : (
         <NavSubLink subLinks={subLinks} title={title} />
       )}
@@ -29,13 +38,14 @@ const NavItem = ({ route, title, className = "", subLinks = [] as any }) => {
 const navLinks = [
   // { id: "1", route: "/", title: "Home" },
   // { id: "1", route: "https://himalayanre.com/", title: "Himalayan Re" },
-  { id: "2", route: "/about-us", title: "About Us" },
-  { id: "3", route: "/services", title: "Services" },
-  { id: "5", route: "/downloads", title: "Downloads" },
+  { id: "2", route: "/about-us", title: "About Us", np: "हाम्रो बारे" },
+  { id: "3", route: "/services", title: "Services", np: "सेवा" },
+  { id: "5", route: "/downloads", title: "Downloads", np: "डाउनलोड" },
   {
     id: "4",
     route: "#",
     title: "Online Services",
+    np: "अनलाइन सेवाहरू",
     subLinks: [
       { id: "1", route: "#", title: "PMS Login" },
       {
@@ -45,8 +55,13 @@ const navLinks = [
       },
     ],
   },
-  { id: "6", route: "#footer", title: "Information Center" },
-  { id: "7", route: "/news-notices", title: "News & Notices" },
+  {
+    id: "6",
+    route: "#footer",
+    title: "Information Center",
+    np: "सूचना केन्द्र",
+  },
+  { id: "7", route: "/news-notices", title: "News & Notices", np: "सूचनाहरू" },
 ];
 
 const Navbar = () => {
@@ -71,12 +86,13 @@ const Navbar = () => {
             }}
           /> */}
           <div className="w-full flex gap-6 ml-auto justify-end items-center z-10 mt-4">
-            {navLinks?.map(({ id, route, title, subLinks }) => (
+            {navLinks?.map(({ id, route, np, title, subLinks }) => (
               <NavItem
                 key={id}
                 route={route}
                 title={title}
                 subLinks={subLinks}
+                np={np}
               />
             ))}
           </div>

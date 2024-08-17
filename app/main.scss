@@ -40,3 +40,19 @@
 .swiper-pagination-bullet-active {
   background: hsl(var(--primary)) !important;
 }
+
+.nav-hover-text {
+  .translated-text {
+    @apply hidden;
+  }
+
+  &:hover {
+    .default-text {
+      @apply hidden;
+    }
+
+    .translated-text {
+      @apply inline;
+    }
+  }
+}
