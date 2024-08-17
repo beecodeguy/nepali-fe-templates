@@ -15,9 +15,9 @@ import { Form, FormField, FormItem, FormMessage } from "../ui/form";
 import ResultCard from "./result-card";
 import { Button } from "../ui/button";
 import { z } from "zod";
-import { investmentFormSchema } from "./validations";
+import { sipFormSchema } from "./validations";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { investmentCalculator } from "@/actions/calculator";
+import { sipCalculator } from "@/actions/calculator";
 
 const periodList = [
   { id: "1m", label: "Monthly" },
@@ -26,21 +26,22 @@ const periodList = [
   { id: "1y", label: "Yearly" },
 ];
 
-const InvestmentCalculator = () => {
-  type FormSchema = z.infer<typeof investmentFormSchema>;
+const SIPCalculator = () => {
+  type FormSchema = z.infer<typeof sipFormSchema>;
 
   const [result, setResult] = useState<Record<string, any> | undefined>(
     undefined
   );
 
   const form = useForm<FormSchema>({
-    resolver: zodResolver(investmentFormSchema),
+    resolver: zodResolver(sipFormSchema),
   });
 
   const { handleSubmit, control } = form;
 
   const onSubmit = (values: FormSchema) => {
-    const output = investmentCalculator(values);
+    const output = sipCalculator(values);
+    console.log("OUTPUT:", output?.toLocaleString());
     setResult({
       ...values,
       output,
@@ -58,7 +59,7 @@ const InvestmentCalculator = () => {
               render={({ field }) => (
                 <FormItem>
                   <div className="w-full flex flex-col gap-3">
-                    <Label>Investment Frequency</Label>
+                    <Label>SIP Frequency</Label>
                     <Select value={field.value} onValueChange={field.onChange}>
                       <SelectTrigger className="bg-transparent focus-visible:outline-none focus-visible:ring-offset-0">
                         <SelectValue placeholder="Select Period" />
@@ -83,13 +84,13 @@ const InvestmentCalculator = () => {
               render={({ field }) => (
                 <FormItem>
                   <div className="w-full flex flex-col gap-3">
-                    <Label>Investment Amount</Label>
+                    <Label>SIP Amount</Label>
                     <Input
                       {...field}
                       type="number"
                       className="bg-transparent focus-visible:outline-none focus-visible:ring-offset-0"
                       value={field.value}
-                      placeholder="Investment amount"
+                      placeholder="sip amount"
                     />
                   </div>
                   <FormMessage />
@@ -103,7 +104,7 @@ const InvestmentCalculator = () => {
               render={({ field }) => (
                 <FormItem>
                   <div className="w-full flex flex-col gap-3">
-                    <Label>Investment Years</Label>
+                    <Label>Years</Label>
                     <Input
                       {...field}
                       type="number"
@@ -143,9 +144,9 @@ const InvestmentCalculator = () => {
           </Button>
         </form>
       </Form>
-      {!!result && <ResultCard resultText={"result"} />}
+      {!!result && <ResultCard resultText={JSON.stringify(result)} />}
     </div>
   );
 };
 
-export default InvestmentCalculator;
+export default SIPCalculator;

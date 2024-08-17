@@ -5,7 +5,7 @@ import React from "react";
 
 const CalculatorSection = () => {
   return (
-    <Card className="border-primary rounded-md p-2">
+    <Card className="border-primary rounded-md p-2 !mx-10">
       <h1 className="text-2xl text-primary font-semibold my-2">Calculations</h1>
       <Separator className="mb-3" />
       <Calculator />
