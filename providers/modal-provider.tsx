@@ -1,6 +1,7 @@
 "use client";
 import HotModals from "@/components/hot-modals";
 import Image from "next/image";
+import { usePathname } from "next/navigation";
 import React, { useEffect, useState } from "react";
 
 const imageSrc =
@@ -38,9 +39,12 @@ const ModalProvider = () => {
     setCurrentDialog(randomList.length);
   };
 
+  const pathname = usePathname();
+
   return (
     <>
-      {randomList?.length > 0 &&
+      {pathname === "/" &&
+        randomList?.length > 0 &&
         randomList?.map((item, idx) => (
           <HotModals
             key={item.id}

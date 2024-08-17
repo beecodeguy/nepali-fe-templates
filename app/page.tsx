@@ -19,6 +19,8 @@ import DetailsSection from "./_components/details-section";
 import FeaturedSection from "./_components/featured-section";
 import CalculatorSection from "./_components/calculator-section";
 import BannerSlide from "./_components/banner-swiper";
+import HotNavs from "@/components/hot-navs";
+import HotLinks from "@/components/hot-links";
 
 const StockMarketLottie = require("../constants/lottie/stock-market.json");
 
@@ -28,6 +30,7 @@ const imageLink =
 export default function Home() {
   return (
     <main className="min-h-screen flex flex-col relative">
+      <HotNavs />
       {/* <WavyBackground> */}
       <div className="w-full relative">
         <BannerSlide />

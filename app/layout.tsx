@@ -21,6 +21,7 @@ import HotNavs from "@/components/hot-navs";
 import ToastProvider from "@/providers/toast-provider";
 import ModalProvider from "@/providers/modal-provider";
 import Script from "next/script";
+import FooterSlot from "./_components/@footer/page";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -31,10 +32,8 @@ export const metadata: Metadata = {
 
 export default function RootLayout({
   children,
-  footer,
 }: Readonly<{
   children: React.ReactNode;
-  footer: React.ReactNode;
 }>) {
   return (
     <html lang="en">
@@ -43,7 +42,7 @@ export default function RootLayout({
         <HotNavs />
         <Navbar />
         <section className="w-full min-h-screen relative">{children}</section>
-        {footer}
+        <FooterSlot />
         <ToastProvider />
         <ModalProvider />
         <Script

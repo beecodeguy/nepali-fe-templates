@@ -1,14 +1,16 @@
+"use client";
+
 import { isCompleteUrl } from "@/lib/utils";
 import {
   Boxes,
   Landmark,
-  Laptop,
   LaptopMinimal,
   MonitorDown,
   Navigation,
   Newspaper,
 } from "lucide-react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import React from "react";
 
 const iconClassName = "shrink-0 text-white";
@@ -35,6 +37,12 @@ const HoverLinkItem = ({ link = "", title }) => {
 };
 
 const HotNavs = () => {
+  const pathname = usePathname();
+
+  if (pathname !== "/") {
+    return null;
+  }
+
   return (
     <div className="fixed top-60 right-0 z-[2]">
       <div className="flex flex-col gap-3 relative">

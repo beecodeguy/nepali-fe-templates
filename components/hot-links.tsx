@@ -1,7 +1,10 @@
+"use client";
+
 import { isCompleteUrl } from "@/lib/utils";
 import { TSocialLink, TSocialLinkTypes } from "@/types";
 import { Boxes } from "lucide-react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import React, { ReactNode } from "react";
 import { FaFacebook, FaInstagram } from "react-icons/fa";
 import { FaXTwitter, FaYoutube } from "react-icons/fa6";
@@ -28,6 +31,12 @@ const HoverLinkItem = ({ url = "", type }) => {
 };
 
 const HotLinks = ({ socialLinks }: { socialLinks: TSocialLink[] }) => {
+  const pathname = usePathname();
+
+  if (pathname !== "/") {
+    return null;
+  }
+
   return (
     <div className="fixed top-60 left-0 z-[2]">
       <div className="flex flex-col gap-3 relative">
